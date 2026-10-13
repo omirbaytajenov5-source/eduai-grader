@@ -26,186 +26,278 @@ from modules.sample_data import (
 # Sahifa konfiguratsiyasi
 st.set_page_config(
     page_title="EduAI Grader - Intellektual Ta'lim Portali",
-    page_icon="🎓",
+    page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # =========================================================================
-# MODERN CYBER-INDIGO & EMERALD DESIGN SYSTEM
+# 🚀 VIBRANT NEON & CYBER-GLASS DESIGN SYSTEM (2026 HIGH-ENERGY UI)
 # =========================================================================
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    * { font-family: 'Plus Jakarta Sans', sans-serif; }
-
-    /* Yuqori E'lon Tasmasi (Cyber-Indigo & Emerald Gradient) */
-    .ticker-banner {
-        background: linear-gradient(100deg, #1e1b4b 0%, #312e81 30%, #0e7490 70%, #059669 100%);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        color: #ffffff;
-        padding: 10px 22px;
-        border-radius: 14px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-        margin-bottom: 24px;
-        box-shadow: 0 4px 20px rgba(14, 116, 144, 0.25);
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
+    /* 1. Asosiy Fon: Chuqur Obsidian & Kosmik Gradient */
+    html, body, [data-testid="stAppViewContainer"], .stApp {
+        background: #090d16 !important;
+        background-image: 
+            radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.18) 0%, transparent 45%),
+            radial-gradient(circle at 90% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+            radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.12) 0%, transparent 50%) !important;
+        background-attachment: fixed !important;
+        color: #f1f5f9 !important;
+        font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif !important;
+    }
+    
+    header[data-testid="stHeader"] {
+        background: transparent !important;
+    }
+    
+    /* 2. Chap Yon Menyu (Sidebar) - Sleek Dark Glass */
+    section[data-testid="stSidebar"] {
+        background: rgba(13, 18, 30, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5) !important;
+    }
+    section[data-testid="stSidebar"] * {
+        color: #e2e8f0 !important;
+    }
+    
+    /* 3. Sarlavhalar va Jonli Tipografika */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.02em !important;
+    }
+    p, span, label {
+        color: #94a3b8;
+    }
+    
+    /* 4. Yuqori E'lon Tasmasi (Radiant Neon Ribbon) */
+    .neon-ticker-banner {
+        background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 35%, #06b6d4 70%, #10b981 100%) !important;
+        color: #ffffff !important;
+        padding: 12px 24px;
+        border-radius: 16px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4), 0 0 15px rgba(6, 182, 212, 0.3);
     }
-    .ticker-tag {
-        background: rgba(16, 185, 129, 0.25);
-        border: 1px solid #10b981;
-        color: #34d399;
-        padding: 2px 8px;
-        border-radius: 8px;
-        font-size: 0.75rem;
-        font-weight: 700;
+    .neon-ticker-banner * {
+        color: #ffffff !important;
+    }
+    .live-pulse-dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #22c55e;
+        border-radius: 50%;
         margin-right: 8px;
+        box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+        animation: pulse 1.8s infinite;
     }
-
-    /* Statistik Kartochkalar (Metric Cards) */
-    .metric-box-lms {
-        background: #ffffff;
-        color: #0f172a;
-        border: 1px solid #e2e8f0;
-        border-radius: 18px;
-        padding: 22px 24px;
-        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-        position: relative;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        margin-bottom: 16px;
-        border-bottom: 4px solid #10b981;
+    
+    /* 5. 3 ta Asosiy KPI Metrika Kartasi (3D Glowing Neon Depth) */
+    .kpi-neon-card {
+        background: rgba(18, 24, 40, 0.75) !important;
+        backdrop-filter: blur(16px) !important;
+        border-radius: 20px !important;
+        padding: 24px 26px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        margin-bottom: 20px !important;
     }
-    .metric-box-lms:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 30px -4px rgba(16, 185, 129, 0.2), 0 4px 15px rgba(99, 102, 241, 0.15);
-        border-color: #cbd5e1;
+    .kpi-neon-card:hover {
+        transform: translateY(-5px) !important;
     }
-    .metric-box-title {
-        font-size: 0.95rem;
-        color: #64748b;
-        font-weight: 600;
-        margin-bottom: 6px;
+    .kpi-card-indigo {
+        border: 1px solid rgba(99, 102, 241, 0.35) !important;
+        box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.25), inset 0 0 20px rgba(99, 102, 241, 0.08) !important;
     }
-    .metric-box-num {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #0f172a;
-        line-height: 1.1;
+    .kpi-card-indigo:hover {
+        border-color: #818cf8 !important;
+        box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.45) !important;
     }
-    .metric-box-badge {
+    .kpi-card-emerald {
+        border: 1px solid rgba(16, 185, 129, 0.35) !important;
+        box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.25), inset 0 0 20px rgba(16, 185, 129, 0.08) !important;
+    }
+    .kpi-card-emerald:hover {
+        border-color: #34d399 !important;
+        box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.45) !important;
+    }
+    .kpi-card-amber {
+        border: 1px solid rgba(245, 158, 11, 0.35) !important;
+        box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.25), inset 0 0 20px rgba(245, 158, 11, 0.08) !important;
+    }
+    .kpi-card-amber:hover {
+        border-color: #fbbf24 !important;
+        box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.45) !important;
+    }
+    
+    .kpi-title {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        color: #94a3b8 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.8px !important;
+        margin-bottom: 8px !important;
+    }
+    .kpi-number {
+        font-size: 2.9rem !important;
+        font-weight: 900 !important;
+        line-height: 1.05 !important;
+        margin: 0 !important;
+    }
+    .kpi-badge-icon {
+        position: absolute !important;
+        top: 22px !important;
+        right: 22px !important;
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.45rem !important;
+    }
+    
+    /* 6. 6 ta Fan Kartochkasi (Vibrant Glowing Subject Cards) */
+    .subject-neon-card {
+        background: rgba(18, 24, 40, 0.8) !important;
+        backdrop-filter: blur(14px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        padding: 22px !important;
+        margin-bottom: 12px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
+    }
+    .subject-neon-card:hover {
+        transform: translateY(-5px) !important;
+        border-color: rgba(99, 102, 241, 0.5) !important;
+        box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.3), 0 0 20px rgba(6, 182, 212, 0.2) !important;
+    }
+    .subject-neon-card::before {
+        content: '';
         position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #6366f1, #06b6d4, #10b981);
     }
-
-    /* Guruh Kartochkalari (Class Grid Cards) */
-    .class-card {
-        background: #ffffff;
-        color: #0f172a;
-        border: 1px solid #e2e8f0;
-        border-radius: 18px;
-        padding: 22px;
-        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-        margin-bottom: 12px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
+    .subject-card-title {
+        font-size: 1.35rem !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin: 0 0 4px 0 !important;
     }
-    .class-card:hover {
-        transform: translateY(-4px);
-        border-color: #6366f1;
-        box-shadow: 0 14px 32px -4px rgba(99, 102, 241, 0.2);
-    }
-    .class-accent-bar {
-        height: 4px;
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 14px;
-    }
-    .class-title {
-        font-size: 1.25rem;
-        font-weight: 800;
-        color: #0f172a;
-        margin: 0 0 4px 0;
-    }
-    .class-subtitle {
-        font-size: 0.85rem;
-        color: #64748b;
-        margin-bottom: 18px;
+    .subject-card-sub {
+        font-size: 0.86rem !important;
+        color: #94a3b8 !important;
+        margin-bottom: 18px !important;
         display: flex;
         align-items: center;
         gap: 6px;
     }
-    .class-badge-pill {
-        display: inline-block;
-        background: #f1f5f9;
-        color: #475569;
-        padding: 2px 8px;
-        border-radius: 6px;
-        font-size: 0.75rem;
-        font-weight: 600;
-    }
-
-    /* Tugmalar dizayni */
+    
+    /* 7. Tugmalar (Vibrant Neon Pill Buttons) */
     .stButton>button {
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 0.82rem;
-        padding: 6px 14px;
-        transition: all 0.2s ease;
+        background: rgba(30, 41, 59, 0.85) !important;
+        color: #f8fafc !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+        font-size: 0.83rem !important;
+        padding: 7px 14px !important;
+        transition: all 0.25s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
     }
-
-    /* Pastki Profil Kartasi */
-    .user-footer-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        padding: 14px 16px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
+    .stButton>button:hover {
+        background: rgba(51, 65, 85, 0.95) !important;
+        border-color: #06b6d4 !important;
+        color: #38bdf8 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 18px rgba(6, 182, 212, 0.3) !important;
     }
-    .user-avatar-circle {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #6366f1 100%);
-        color: white;
-        font-weight: 800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.05rem;
-        box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+    .stButton>button[kind="primary"] {
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #06b6d4 100%) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.5) !important;
     }
-
-    /* Baholash Natijalari (3D Grade Cards) */
-    .grade-card {
-        background: rgba(30, 41, 59, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 18px;
-        padding: 22px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        margin-bottom: 16px;
+    .stButton>button[kind="primary"]:hover {
+        background: linear-gradient(135deg, #4f46e5 0%, #4338ca 50%, #0891b2 100%) !important;
+        box-shadow: 0 6px 25px rgba(99, 102, 241, 0.7) !important;
+        color: #ffffff !important;
     }
-    .big-score {
-        font-size: 2.8rem;
-        font-weight: 800;
-        line-height: 1.1;
-        margin: 10px 0;
+    
+    /* 8. Yon Menyu Radio Tugmalari (Glow Pill Navigation) */
+    div[role="radiogroup"] > label {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 12px !important;
+        padding: 10px 16px !important;
+        margin-bottom: 6px !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        color: #cbd5e1 !important;
+        font-weight: 600 !important;
+        font-size: 0.92rem !important;
+        transition: all 0.2s ease !important;
+    }
+    div[role="radiogroup"] > label:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    div[role="radiogroup"] > label:has(input:checked) {
+        background: linear-gradient(90deg, rgba(99, 102, 241, 0.3) 0%, rgba(6, 182, 212, 0.15) 100%) !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        border: 1px solid #6366f1 !important;
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.35) !important;
+    }
+    
+    /* 9. Matn maydonlari va Tanlash qutilari */
+    .stTextInput input, .stTextArea textarea, .stSelectbox [data-baseweb="select"] {
+        background-color: rgba(18, 24, 40, 0.8) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 12px !important;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    }
+    .stTextInput input:focus, .stTextArea textarea:focus {
+        border-color: #6366f1 !important;
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.35) !important;
+    }
+    
+    /* 10. Jadvallar */
+    .stDataFrame, .stTable {
+        background: rgba(18, 24, 40, 0.8) !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        overflow: hidden !important;
+    }
+    
+    /* 11. Baholash Karta Bloki */
+    .grade-box-neon {
+        background: rgba(18, 24, 40, 0.85) !important;
+        backdrop-filter: blur(16px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        padding: 24px !important;
+        margin-bottom: 16px !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -221,63 +313,57 @@ if "teacher_classes" not in st.session_state:
     st.session_state.teacher_classes = [
         {
             "id": 1,
-            "subject": "Veb dasturlash",
-            "grade_level": "10-A",
+            "subject": "Veb Dasturlash",
             "class_info": "10-A • Butun sinf • 12 o'quvchi",
-            "accent": "linear-gradient(90deg, #6366f1, #3b82f6)",
-            "badge_color": "#e0e7ff",
+            "full_name": "Veb Dasturlash (Full-Stack & Cloud)",
             "room": "304-xona",
-            "syllabus": ["HTML5/CSS3 asoslari", "Flexbox va Grid", "JavaScript DOM manipulyatsiyasi", "AI bilan kodlash"]
+            "badge_color": "#06b6d4",
+            "syllabus": ["HTML5/CSS3 zamonaviy dizayn", "Flexbox va CSS Grid", "JavaScript Async & DOM", "Node.js REST API"]
         },
         {
             "id": 2,
-            "subject": "Tarmoq texnologiyalari",
-            "grade_level": "10-A",
+            "subject": "Tarmoq Texnologiyalari",
             "class_info": "10-A • Butun sinf • 10 o'quvchi",
-            "accent": "linear-gradient(90deg, #0d9488, #10b981)",
-            "badge_color": "#ccfbf1",
+            "full_name": "Tarmoq Texnologiyalari va Kiberxavfsizlik",
             "room": "Server xonasi",
-            "syllabus": ["OSI va TCP/IP modellari", "IP adreslash & Subnetting", "Router & Switch sozlash", "Kiberxavfsizlik asoslari"]
+            "badge_color": "#10b981",
+            "syllabus": ["OSI va TCP/IP modellari", "IP subnetting", "Router & Firewall konfiguratsiya", "Penetration testing"]
         },
         {
             "id": 3,
-            "subject": "Sun'iy intellekt & Data",
-            "grade_level": "10-A",
+            "subject": "Grafika va Dizayn",
             "class_info": "10-A • Butun sinf • 7 o'quvchi",
-            "accent": "linear-gradient(90deg, #8b5cf6, #ec4899)",
-            "badge_color": "#f3e8ff",
-            "room": "AI Laboratoriyasi",
-            "syllabus": ["Mashinali o'rganish kirish", "NLP va Matn tahlili", "LLM va Neyrotarmoqlar", "3D Baholash algoritmlari"]
+            "full_name": "Kompyuter Grafikasi & UI/UX Muhandisligi",
+            "room": "Dizayn studiyasi",
+            "badge_color": "#a855f7",
+            "syllabus": ["Vektorli grafika", "Figma Design System", "Micro-animations", "3D WebGL asoslari"]
         },
         {
             "id": 4,
-            "subject": "Mobil dasturlash",
-            "grade_level": "10-A",
+            "subject": "Mobil Dasturlash",
             "class_info": "10-A • Butun sinf • 15 o'quvchi",
-            "accent": "linear-gradient(90deg, #f43f5e, #fb923c)",
-            "badge_color": "#fce7f3",
+            "full_name": "Krossplatformali Mobil Dasturlash (Flutter)",
             "room": "205-xona",
-            "syllabus": ["Flutter arxitekturasi", "Widgetlar va State Management", "API integratsiyasi", "Mobil UI/UX dizayn"]
+            "badge_color": "#f43f5e",
+            "syllabus": ["Flutter Widget daraxti", "State Management (Bloc)", "Camera & GPS integratsiyasi", "App Store yuklash"]
         },
         {
             "id": 5,
             "subject": "Informatika va AT",
-            "grade_level": "8-C",
             "class_info": "8-C • Butun sinf • 11 o'quvchi",
-            "accent": "linear-gradient(90deg, #10b981, #06b6d4)",
-            "badge_color": "#dcfce7",
+            "full_name": "Informatika va Axborot Texnologiyalari",
             "room": "102-xona",
-            "syllabus": ["Axborot xavfsizligi", "Elektron jadvallar (Excel)", "Ma'lumotlar bazasi (SQL)", "Algoritmlar nazariyasi"]
+            "badge_color": "#38bdf8",
+            "syllabus": ["Axborot tizimlari", "Katta ma'lumotlar tahlili", "SQL ma'lumotlar bazasi", "Algoritmik mantiq"]
         },
         {
             "id": 6,
-            "subject": "Python algoritmlari",
-            "grade_level": "8-A",
+            "subject": "Sun'iy Intellekt & Python",
             "class_info": "8-A • Butun sinf • 12 o'quvchi",
-            "accent": "linear-gradient(90deg, #f59e0b, #eab308)",
-            "badge_color": "#fef3c7",
-            "room": "Kompyuter sinfi",
-            "syllabus": ["Funksiyalar va Rekursiya", "Ro'yxat va Lug'atlar", "OOP tamoyillari", "Fayllar bilan ishlash"]
+            "full_name": "Sun'iy Intellekt va Python Algoritmlari",
+            "room": "AI Laboratoriyasi",
+            "badge_color": "#f59e0b",
+            "syllabus": ["Python funksiyalar & Rekursiya", "NumPy & Pandas tahlili", "Neyrotarmoqlar kirish", "3D Baholash modeli"]
         }
     ]
 
@@ -325,31 +411,34 @@ if "grades_journal" not in st.session_state:
     ]
 
 # =========================================================================
-# KIRISH OYNASI (LOGIN SCREEN)
+# KIRISH OYNASI (CYBER-GLASS AUTH TERMINAL)
 # =========================================================================
 if st.session_state.current_user is None:
     st.markdown("""
-    <div style="max-width: 650px; margin: 40px auto 20px auto; text-align: center;">
-        <h1 style="font-size: 2.4rem; font-weight: 800; background: linear-gradient(135deg, #6366f1 0%, #06b6d4 50%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px;">
-            🎓 EduAI Grader
-        </h1>
-        <p style="font-size: 1.05rem; opacity: 0.85; color: #cbd5e1;">
-            Intellektual Ta'lim va 3D Baholash Platformasi — Tizimga Kirish
+    <div style="max-width: 580px; margin: 40px auto 16px auto; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <span style="font-size: 2.8rem;">⚡</span>
+            <span style="font-size: 2.6rem; font-weight: 900; background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                EduAI<span style="color: #06b6d4;">.uz</span>
+            </span>
+        </div>
+        <p style="font-size: 1.05rem; color: #94a3b8; margin: 0 0 24px 0;">
+            Aydın keleshek sarı — 3D Sun'iy Intellekt Baholash va Ta'lim Portali
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    login_col1, login_col2, login_col3 = st.columns([1, 2, 1])
-    with login_col2:
+    c_l1, c_l2, c_l3 = st.columns([1, 2, 1])
+    with c_l2:
         st.markdown("""
-        <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 20px; padding: 28px; box-shadow: 0 12px 35px rgba(0,0,0,0.45);">
-            <h3 style="margin-top: 0; text-align: center; color: white;">🔐 Akkauntga Kirish</h3>
+        <div style="background: rgba(18, 24, 40, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 24px; padding: 34px; box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(99, 102, 241, 0.2);">
+            <h3 style="margin: 0 0 18px 0; font-size: 1.45rem; font-weight: 800; color: #ffffff; text-align: center;">🔐 Tizimga Kirish</h3>
         """, unsafe_allow_html=True)
         
-        input_login = st.text_input("Foydalanuvchi Logini:", placeholder="omirbaytajenov5@gmail.com yoki teacher yoki jasur")
+        input_login = st.text_input("Login:", placeholder="omirbaytajenov5@gmail.com yoki teacher")
         input_password = st.text_input("Parol:", type="password", placeholder="Parolingizni kiriting")
         
-        if st.button("🚀 Tizimga Kirish", type="primary", use_container_width=True):
+        if st.button("🚀 Kirish", type="primary", use_container_width=True):
             user_match = authenticate_user(input_login, input_password)
             if user_match:
                 st.session_state.current_user = user_match
@@ -362,9 +451,9 @@ if st.session_state.current_user is None:
                 st.success(f"Xush kelibsiz, {user_match['name']}!")
                 st.rerun()
             else:
-                st.error("Login yoki parol noto'g'ri! Iltimos, qayta urinib ko'ring.")
+                st.error("Login yoki parol noto'g'ri! Iltimos, qayta tekshiring.")
 
-        st.markdown("---")
+        st.markdown("<hr style='margin: 22px 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);'>", unsafe_allow_html=True)
         st.caption("⚡ **Tezkor kirish tugmalari:**")
         c_dem1, c_dem2, c_dem3 = st.columns(3)
         with c_dem1:
@@ -385,76 +474,78 @@ if st.session_state.current_user is None:
 
 
 # =========================================================================
-# ASOSIY DASTUR: KIRILGAN FOYDALANUVChI
+# ASOSIY INTERFEYS: KIRILGAN FOYDALANUVChI
 # =========================================================================
 curr_u = st.session_state.current_user
 user_role = curr_u["role"]
 initials = "".join([part[0].upper() for part in curr_u['name'].split()[:2]])
 
-# SIDEBAR: MODERN CYBER-INDIGO & EMERALD MENYU
+# SIDEBAR: GLOWING CYBER-GLASS NAVIGATION
 with st.sidebar:
     st.markdown("""
-    <div style="display: flex; align-items: center; gap: 12px; padding: 6px 0 18px 0; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px;">
-        <span style="font-size: 2rem;">🎓</span>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 6px 0 18px 0; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);">
+            ⚡
+        </div>
         <div>
-            <h3 style="margin: 0; font-size: 1.3rem; font-weight: 800; background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">EduAI</h3>
-            <span style="font-size: 0.72rem; color: #10b981; font-weight: 700; letter-spacing: 0.5px;">CYBER-INTELLIGENCE</span>
+            <div style="font-size: 1.35rem; font-weight: 900; background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                EduAI<span style="color: #06b6d4;">.uz</span>
+            </div>
+            <div style="font-size: 0.72rem; color: #06b6d4; font-weight: 700; letter-spacing: 0.5px;">Aydın keleshek sarı</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # Rolga mos menyu
     if user_role == "Administrator":
-        st.caption("🛡️ ADMINISTRATOR MENYUSI")
         active_menu = st.radio(
-            "Bo'limlar:",
+            "Menyu:",
             [
-                "🏠 Bosh sahifa & Monitoring",
-                "➕ Yangi Foydalanuvchi Qo'shish",
-                "👥 Akkauntlar Boshqaruvi",
-                "🔐 Global API & Xavfsizlik",
-                "📋 Tizim Audit Loglari"
+                "🏠 Bosh sahifa",
+                "➕ Foydalanuvchi qo'shish",
+                "👥 Akkauntlar",
+                "🔐 API kaliti",
+                "📋 Audit loglari"
             ],
             label_visibility="collapsed"
         )
     elif user_role == "O'qituvchi":
-        st.caption("🧑‍🏫 O'QITUVChI MENYUSI")
         active_menu = st.radio(
-            "Bo'limlar:",
+            "Menyu:",
             [
-                "🏠 Bosh sahifa (Dashboard)",
-                "🏫 Sinflar & Guruhlar Boshqaruvi",
-                "📅 Taqvim & Dars Jadvali",
-                "📝 3D Baholash Laboratoriyasi",
-                "📂 Ommaviy Baholash & Plagiat",
-                "📊 Elektron Baholash Jurnali",
-                "📄 Rasmiy Dalolatnoma (PDF)",
-                "📈 Ilmiy Eksperiment (IV Bob)"
+                "🏠 Bosh sahifa",
+                "👥 Sinflar",
+                "📅 Taqvim",
+                "📝 3D Baholash",
+                "📂 Ommaviy baholash",
+                "📊 Jurnal",
+                "📄 Dalolatnoma",
+                "📈 Ilmiy tahlil"
             ],
             label_visibility="collapsed"
         )
     else: # O'quvchi
-        st.caption("🎓 O'QUVChI MENYUSI")
         active_menu = st.radio(
-            "Bo'limlar:",
+            "Menyu:",
             [
-                "🏠 Bosh sahifa & Vazifalar",
-                "📤 Uy Vazifasini Topshirish",
-                "📜 Mening Baholarim & Tahlil",
-                "✉️ O'qituvchi Tavsiya Xati"
+                "🏠 Bosh sahifa",
+                "📤 Vazifa topshirish",
+                "📜 Baholarim",
+                "✉️ Tavsiya xati"
             ],
             label_visibility="collapsed"
         )
 
-    st.markdown("---")
+    st.markdown("<div style='height: 35px;'></div>", unsafe_allow_html=True)
 
-    # Pastki Profil qismi
+    # Profil kartasi (Pastda: O'mirbay Ta'jenov O'qituvchi)
     st.markdown(f"""
-    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-        <div class="user-avatar-circle">{initials}</div>
-        <div>
-            <div style="font-size: 0.95rem; font-weight: 700; color: white;">{curr_u['name']}</div>
-            <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">{user_role}</div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; margin-bottom: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        <div style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #06b6d4); color: white; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);">
+            {initials}
+        </div>
+        <div style="overflow: hidden;">
+            <div style="font-size: 0.92rem; font-weight: 800; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{curr_u['name']}</div>
+            <div style="font-size: 0.75rem; color: #38bdf8; font-weight: 700;">{user_role}</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -469,204 +560,225 @@ with st.sidebar:
 # 🧑‍🏫 O'QITUVCHI PANELI
 # =========================================================================
 if user_role == "O'qituvchi":
-    # 1. YUQORI E'LON TASMASI (CYBER TICKER RIBBON)
+    # 1. YUQORI RADIANT E'LON TASMASI
     st.markdown("""
-    <div class="ticker-banner">
+    <div class="neon-ticker-banner">
         <div style="display: flex; align-items: center;">
-            <span class="ticker-tag">AI LIVE</span>
-            <span>📢 <b>Xush kelibsiz!</b> EduAI Grader ta'lim platformasiga xush kelibsiz! Bugungi mashg'ulotlaringizda omad tilaymiz!</span>
+            <span class="live-pulse-dot"></span>
+            <span>📢 <b>Xush kelibsiz!</b> EduAI ta'lim platformasiga xush kelibsiz! Bugungi mashg'ulotlaringizda zafar tilaymiz!</span>
         </div>
-        <div style="opacity: 0.9; font-size: 0.85rem; font-weight: 600; display: flex; gap: 14px; align-items: center;">
-            <span>🇺🇿 O'zbekcha ▾</span>
-            <span>🔔 Bildirishnomalar (2)</span>
+        <div style="display: flex; align-items: center; gap: 18px; font-size: 0.88rem; font-weight: 700;">
+            <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 8px;">🇺🇿 O'zbek ▾</span>
+            <span>🔔 Bildirishnoma (2)</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # A. BOSH SAHIFA: GURUHLAR VA STATISTIKA (GILT.UZ STRUKTURASI + CYBER PALITRA)
-    if active_menu == "🏠 Bosh sahifa (Dashboard)":
-        col_th1, col_th2 = st.columns([4, 1.2])
-        with col_th1:
+    # A. BOSH SAHIFA: O'QITUVCHI PANELI (HIGH-ENERGY DASHBOARD)
+    if active_menu == "🏠 Bosh sahifa":
+        col_hdr1, col_hdr2 = st.columns([4, 1.2])
+        with col_hdr1:
             st.markdown("""
-            <h2 style="margin: 0; font-size: 1.85rem; font-weight: 800; color: white;">O'qituvchi paneli</h2>
-            <p style="margin: 4px 0 20px 0; color: #94a3b8; font-size: 0.95rem;">Guruhlaringiz — jurnal, uy vazifalari va 3D sun'iy intellekt tahlili shu yerda.</p>
+            <h2 style="margin: 0; font-size: 2.1rem; font-weight: 900; background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 60%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                O'qituvchi paneli
+            </h2>
+            <p style="margin: 4px 0 22px 0; color: #94a3b8; font-size: 1rem;">
+                Guruhlaringiz — elektron jurnal, uy vazifalari va 3D intellektual baholash shu yerda.
+            </p>
             """, unsafe_allow_html=True)
-        with col_th2:
-            st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
-            if st.button("➕ Yangi Dars Qo'shish →", type="primary", use_container_width=True):
-                st.session_state.show_add_class_box = True
+        with col_hdr2:
+            st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
+            if st.button("⚡ Sinflar Ro'yxati →", type="primary", use_container_width=True):
+                st.session_state.class_modal_view = {"type": "classes_list"}
 
-        # 3 TA STATISTIK KARTOChKA (METRIC CARDS)
+        # 3 TA STATISTIK KARTOChKA (GLOWING 3D KPI CARDS)
         col_m1, col_m2, col_m3 = st.columns(3)
         with col_m1:
             st.markdown("""
-            <div class="metric-box-lms" style="border-bottom-color: #6366f1;">
-                <div class="metric-box-title">Guruhlarim</div>
-                <div class="metric-box-num">6</div>
-                <div class="metric-box-badge" style="background: #e0e7ff; color: #4338ca;">📚</div>
+            <div class="kpi-neon-card kpi-card-indigo">
+                <div class="kpi-title">Guruhlarim</div>
+                <div class="kpi-number" style="background: linear-gradient(135deg, #818cf8 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">6</div>
+                <div class="kpi-badge-icon" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.4);">📚</div>
             </div>
             """, unsafe_allow_html=True)
 
         with col_m2:
             st.markdown("""
-            <div class="metric-box-lms" style="border-bottom-color: #10b981;">
-                <div class="metric-box-title">O'quvchilar</div>
-                <div class="metric-box-num">78</div>
-                <div class="metric-box-badge" style="background: #dcfce7; color: #047857;">🎓</div>
+            <div class="kpi-neon-card kpi-card-emerald">
+                <div class="kpi-title">O'quvchilar</div>
+                <div class="kpi-number" style="background: linear-gradient(135deg, #34d399 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">78</div>
+                <div class="kpi-badge-icon" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">🎓</div>
             </div>
             """, unsafe_allow_html=True)
 
         with col_m3:
             unreviewed_count = max(1, 14 - len(st.session_state.grades_journal))
             st.markdown(f"""
-            <div class="metric-box-lms" style="border-bottom-color: #06b6d4;">
-                <div class="metric-box-title">Baholanmagan vazifa</div>
-                <div class="metric-box-num">{unreviewed_count}</div>
-                <div style="font-size: 0.8rem; color: #0891b2; font-weight: 600; margin-top: 4px;">Tekshirishni kutmoqda</div>
-                <div class="metric-box-badge" style="background: #cffafe; color: #0e7490;">⏳</div>
+            <div class="kpi-neon-card kpi-card-amber">
+                <div class="kpi-title">Baholanmagan vazifa</div>
+                <div class="kpi-number" style="background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{unreviewed_count}</div>
+                <div style="font-size: 0.82rem; color: #fbbf24; font-weight: 700; margin-top: 4px;">⚡ Tekshirishni kutmoqda</div>
+                <div class="kpi-badge-icon" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4);">⏳</div>
             </div>
             """, unsafe_allow_html=True)
 
-        st.markdown("<h3 style='margin: 18px 0 16px 0; font-size: 1.35rem; font-weight: 800; color: white;'>Mening Guruhlarim</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='margin: 14px 0 18px 0; font-size: 1.45rem; font-weight: 800; color: #ffffff;'>Mening Guruhlarim va Fanlarim</h3>", unsafe_allow_html=True)
 
-        # 6 TA SINF / FAN KARTOChKASI (GRID)
-        cls_grid1, cls_grid2, cls_grid3 = st.columns(3)
-        cols_cycle = [cls_grid1, cls_grid2, cls_grid3]
+        # 6 TA FAN KARTOChKASI (GRID: JONLI VA YORQIN AKTSENTLAR BILAN)
+        g1, g2, g3 = st.columns(3)
+        grid_cols = [g1, g2, g3]
 
         for idx, item in enumerate(st.session_state.teacher_classes):
-            with cols_cycle[idx % 3]:
+            with grid_cols[idx % 3]:
                 st.markdown(f"""
-                <div class="class-card">
-                    <div class="class-accent-bar" style="background: {item['accent']};"></div>
-                    <div class="class-title">{item['subject']}</div>
-                    <div class="class-subtitle">
+                <div class="subject-neon-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <span class="subject-card-title">{item['subject']}</span>
+                        <span style="background: rgba(255,255,255,0.08); color: {item['badge_color']}; border: 1px solid {item['badge_color']}40; padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 800;">{item['room']}</span>
+                    </div>
+                    <div class="subject-card-sub">
                         <span>{item['class_info']}</span>
-                        <span class="class-badge-pill">{item['room']}</span>
                     </div>
                 """, unsafe_allow_html=True)
-                
-                # Kartochka ichidagi tezkor harakat tugmalari
-                btn_c1, btn_c2, btn_c3, btn_c4 = st.columns(4)
-                with btn_c1:
+
+                # Tugmalar qatori: O'quvchilar | Jurnal | Reja | Tahlil (AI)
+                b1, b2, b3, b4 = st.columns(4)
+                with b1:
                     if st.button("O'quvchilar", key=f"btn_u_{item['id']}", use_container_width=True):
                         st.session_state.class_modal_view = {"type": "students", "class": item}
-                with btn_c2:
+                with b2:
                     if st.button("Jurnal", key=f"btn_j_{item['id']}", use_container_width=True):
                         st.session_state.class_modal_view = {"type": "journal", "class": item}
-                with btn_c3:
+                with b3:
                     if st.button("Reja", key=f"btn_p_{item['id']}", use_container_width=True):
                         st.session_state.class_modal_view = {"type": "plan", "class": item}
-                with btn_c4:
+                with b4:
                     if st.button("✨ Tahlil", key=f"btn_ai_{item['id']}", type="primary", use_container_width=True):
-                        st.session_state.task_input = f"{item['subject']} fanidan uy vazifasi va amaliy laboratoriya topshirig'i."
-                        st.session_state.class_modal_view = {"type": "grading_redirect", "class": item}
+                        st.session_state.task_input = f"{item['full_name']} bo'yicha amaliy topshiriq va laboratoriya ishi."
+                        st.session_state.class_modal_view = {"type": "ai_redirect", "class": item}
 
                 st.markdown("</div>", unsafe_allow_html=True)
 
-        # TANLANGAN HARAKATNING INTERAKTIV OYNASI (DRAWER/POPUP)
+        # TANLANGAN TUGMA MA'LUMOTI (DRAWER POPUP)
         if st.session_state.class_modal_view:
             mv = st.session_state.class_modal_view
-            cls_item = mv["class"]
             st.markdown("---")
             
-            if mv["type"] == "students":
-                st.info(f"👥 **{cls_item['subject']} ({cls_item['grade_level']})** — Biriktirilgan o'quvchilar ro'yxati:")
+            if mv.get("type") == "students":
+                cls_item = mv["class"]
+                st.subheader(f"👥 {cls_item['subject']} ({cls_item['class_info']}) — O'quvchilar ro'yxati")
                 st_data = [
-                    {"№": 1, "F.I.Sh": "Azizov Jasur", "Holat": "Faol", "Oxirgi topshiriq": "Topshirdi", "Ball": "9.1/10"},
-                    {"№": 2, "F.I.Sh": "Karimov Dilshod", "Holat": "Faol", "Oxirgi topshiriq": "Kutilmoqda", "Ball": "—"},
-                    {"№": 3, "F.I.Sh": "Nazarova Nigora", "Holat": "Faol", "Oxirgi topshiriq": "Topshirdi", "Ball": "8.8/10"},
-                    {"№": 4, "F.I.Sh": "Sobirov Alisher", "Holat": "Faol", "Oxirgi topshiriq": "Topshirdi", "Ball": "9.5/10"},
-                    {"№": 5, "F.I.Sh": "Rustamova Laylo", "Holat": "Faol", "Oxirgi topshiriq": "Topshirdi", "Ball": "7.9/10"}
+                    {"№": 1, "F.I.Sh": "Azizov Jasur", "Holat": "Faol", "Oxirgi baho": "9.1/10"},
+                    {"№": 2, "F.I.Sh": "Karimov Dilshod", "Holat": "Faol", "Oxirgi baho": "Kutilmoqda"},
+                    {"№": 3, "F.I.Sh": "Nazarova Nigora", "Holat": "Faol", "Oxirgi baho": "8.8/10"},
+                    {"№": 4, "F.I.Sh": "Sobirov Alisher", "Holat": "Faol", "Oxirgi baho": "9.5/10"}
                 ]
                 st.dataframe(pd.DataFrame(st_data), use_container_width=True)
-                if st.button("Yopish ✖️", key="close_students"):
+                if st.button("Yopish ✖️", key="close_modal"):
                     st.session_state.class_modal_view = None
                     st.rerun()
 
-            elif mv["type"] == "journal":
-                st.success(f"📊 **{cls_item['subject']}** — Guruh baholash jurnali:")
+            elif mv.get("type") == "journal":
+                cls_item = mv["class"]
+                st.subheader(f"📊 {cls_item['subject']} — Elektron Jurnal")
                 st.table(pd.DataFrame([
-                    {"Mavzu": "1-Amaliy mashg'ulot", "O'rtacha ball": "8.7", "AI Plagiat nazorati": "0 ta holat", "Topshirganlar": "12/12"},
-                    {"Mavzu": "2-Laboratoriya ishi", "O'rtacha ball": "8.2", "AI Plagiat nazorati": "1 ta tekshirildi", "Topshirganlar": "11/12"}
+                    {"Mavzu": "1-Amaliy mashg'ulot", "O'rtacha ball": "8.7", "Topshirganlar": "12/12"},
+                    {"Mavzu": "2-Laboratoriya ishi", "O'rtacha ball": "8.2", "Topshirganlar": "11/12"}
                 ]))
                 if st.button("Yopish ✖️", key="close_journal"):
                     st.session_state.class_modal_view = None
                     st.rerun()
 
-            elif mv["type"] == "plan":
-                st.warning(f"📑 **{cls_item['subject']}** — O'quv dasturi va mavzular rejasi (Syllabus):")
-                for s_idx, topic in enumerate(cls_item.get("syllabus", []), 1):
-                    st.write(f"**{s_idx}-Mavzu:** {topic}")
+            elif mv.get("type") == "plan":
+                cls_item = mv["class"]
+                st.subheader(f"📑 {cls_item['full_name']} — O'quv rejasi")
+                for s_i, topic in enumerate(cls_item.get("syllabus", []), 1):
+                    st.write(f"**{s_i}-Mavzu:** {topic}")
                 if st.button("Yopish ✖️", key="close_plan"):
                     st.session_state.class_modal_view = None
                     st.rerun()
 
-            elif mv["type"] == "grading_redirect":
-                st.success(f"🎯 **{cls_item['subject']}** fani bo'yicha baholash laboratoriyasiga ma'lumot uzatildi! Chap menyudan **'3D Baholash Laboratoriyasi'** sahifasiga o'ting.")
-                if st.button("Yopish ✖️", key="close_redirect"):
+            elif mv.get("type") == "ai_redirect":
+                cls_item = mv["class"]
+                st.success(f"⚡ **{cls_item['full_name']}** fani bo'yicha ma'lumotlar yuklandi! Chap menyudan **'📝 3D Baholash'** bo'limiga o'ting.")
+                if st.button("Tushundim ✖️", key="close_redirect"):
                     st.session_state.class_modal_view = None
                     st.rerun()
 
-    # B. SINFLAR & GURUHLAR BOSHQARUVI (GILT.UZ SINFLAR BO'LIMI)
-    elif active_menu == "🏫 Sinflar & Guruhlar Boshqaruvi":
-        st.subheader("🏫 Mening Sinflarim va Guruhlar Ro'yxati")
-        
-        c_add1, c_add2 = st.columns([3, 1])
-        with c_add1:
-            st.write("Sizga biriktirilgan barcha faol sinflar va dars yuklamalari:")
-        with c_add2:
-            with st.expander("➕ Yangi Guruh Qo'shish"):
-                n_subj = st.text_input("Fan nomi:", placeholder="Masalan: Robototexnika")
-                n_class = st.text_input("Sinf:", placeholder="Masalan: 11-A")
-                n_room = st.text_input("Xona:", placeholder="Masalan: 401-xona")
-                if st.button("Saqlash", type="primary"):
-                    st.session_state.teacher_classes.append({
-                        "id": len(st.session_state.teacher_classes) + 1,
-                        "subject": n_subj,
-                        "grade_level": n_class,
-                        "class_info": f"{n_class} • Butun sinf • 14 o'quvchi",
-                        "accent": "linear-gradient(90deg, #10b981, #06b6d4)",
-                        "badge_color": "#dcfce7",
-                        "room": n_room,
-                        "syllabus": ["1-Mavzu: Kirish", "2-Mavzu: Amaliyot"]
+            elif mv.get("type") == "classes_list":
+                st.subheader("📋 Barcha Sinflar va Dars Yuklamalari")
+                cls_table = []
+                for c in st.session_state.teacher_classes:
+                    cls_table.append({
+                        "Fan": c["subject"],
+                        "To'liq nomi": c["full_name"],
+                        "Sinf": c["class_info"],
+                        "Xona": c["room"]
                     })
-                    st.success("Yangi guruh qo'shildi!")
+                st.dataframe(pd.DataFrame(cls_table), use_container_width=True)
+                if st.button("Yopish ✖️", key="close_cls_list"):
+                    st.session_state.class_modal_view = None
                     st.rerun()
 
-        classes_df = []
-        for c in st.session_state.teacher_classes:
-            classes_df.append({
-                "ID": c["id"],
-                "Fan": c["subject"],
-                "Sinf": c["grade_level"],
-                "Tafsilot": c["class_info"],
-                "Dars Xonasi": c["room"],
-                "Mavzular soni": len(c.get("syllabus", []))
-            })
-        st.dataframe(pd.DataFrame(classes_df), use_container_width=True)
+    # B. SINFLAR BO'LIMI
+    elif active_menu == "👥 Sinflar":
+        st.subheader("👥 Sinflar va Guruhlar Boshqaruvi")
+        col_c1, col_c2 = st.columns([3, 1])
+        with col_c1:
+            st.write("Sizga biriktirilgan faol guruhlar:")
+            c_table = []
+            for c in st.session_state.teacher_classes:
+                c_table.append({
+                    "Fan": c["subject"],
+                    "Sinf": c["class_info"],
+                    "Xona": c["room"],
+                    "Mavzular": len(c["syllabus"])
+                })
+            st.dataframe(pd.DataFrame(c_table), use_container_width=True)
+        with col_c2:
+            st.markdown("""
+            <div style="background: rgba(18, 24, 40, 0.85); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; padding: 20px;">
+                <h4 style="margin: 0 0 12px 0; color: white;">➕ Yangi Guruh</h4>
+            """, unsafe_allow_html=True)
+            new_s = st.text_input("Fan:", placeholder="Robototexnika")
+            new_c = st.text_input("Sinf:", placeholder="11-A")
+            new_r = st.text_input("Xona:", placeholder="402")
+            if st.button("Saqlash", type="primary", use_container_width=True):
+                st.session_state.teacher_classes.append({
+                    "id": len(st.session_state.teacher_classes) + 1,
+                    "subject": new_s,
+                    "class_info": f"{new_c} • Butun sinf • 15 o'quvchi",
+                    "full_name": new_s,
+                    "room": f"{new_r}-xona",
+                    "badge_color": "#10b981",
+                    "syllabus": ["1-Mavzu: Kirish", "2-Mavzu: Amaliyot"]
+                })
+                st.success("Guruh qo'shildi!")
+                st.rerun()
+            st.markdown("</div>", unsafe_allow_html=True)
 
-    # C. TAQVIM & DARS JADVALI (GILT.UZ TAQVIM BO'LIMI)
-    elif active_menu == "📅 Taqvim & Dars Jadvali":
-        st.subheader("📅 O'qituvchining Haftalik Dars Jadvali va Rejasi")
-        schedule_data = [
-            {"Kun": "Dushanba", "Vaqt": "08:30 - 09:50", "Fan": "Veb dasturlash", "Sinf": "10-A", "Xona": "304", "Holat": "✅ O'tildi"},
-            {"Kun": "Dushanba", "Vaqt": "10:00 - 11:20", "Fan": "Tarmoq texnologiyalari", "Sinf": "10-A", "Xona": "Server", "Holat": "✅ O'tildi"},
-            {"Kun": "Seshanba", "Vaqt": "08:30 - 09:50", "Fan": "Informatika va AT", "Sinf": "8-C", "Xona": "102", "Holat": "🕒 Navbatdagi"},
-            {"Kun": "Chorshanba", "Vaqt": "11:30 - 12:50", "Fan": "Python algoritmlari", "Sinf": "8-A", "Xona": "Komp", "Holat": "📝 3D Baholash Topshirig'i"},
-            {"Kun": "Payshanba", "Vaqt": "08:30 - 09:50", "Fan": "Sun'iy intellekt & Data", "Sinf": "10-A", "Xona": "AI Lab", "Holat": "Rejalashtirilgan"},
-            {"Kun": "Juma", "Vaqt": "10:00 - 11:20", "Fan": "Mobil dasturlash", "Sinf": "10-A", "Xona": "205", "Holat": "Rejalashtirilgan"}
+    # C. TAQVIM BO'LIMI
+    elif active_menu == "📅 Taqvim":
+        st.subheader("📅 Haftalik Dars Jadvali va Reja")
+        sch = [
+            {"Kun": "Dushanba", "Vaqt": "08:30 - 09:50", "Fan": "Veb Dasturlash", "Sinf": "10-A", "Xona": "304", "Holat": "✅ O'tildi"},
+            {"Kun": "Dushanba", "Vaqt": "10:00 - 11:20", "Fan": "Tarmoq Texnologiyalari", "Sinf": "10-A", "Xona": "Server", "Holat": "✅ O'tildi"},
+            {"Kun": "Seshanba", "Vaqt": "08:30 - 09:50", "Fan": "Informatika", "Sinf": "8-C", "Xona": "102", "Holat": "🕒 Navbatdagi"},
+            {"Kun": "Chorshanba", "Vaqt": "11:30 - 12:50", "Fan": "Sun'iy Intellekt", "Sinf": "8-A", "Xona": "AI Lab", "Holat": "📝 AI Baholash"},
+            {"Kun": "Payshanba", "Vaqt": "08:30 - 09:50", "Fan": "Grafika va Dizayn", "Sinf": "10-A", "Xona": "Dizayn", "Holat": "Rejalashtirilgan"},
+            {"Kun": "Juma", "Vaqt": "10:00 - 11:20", "Fan": "Mobil Dasturlash", "Sinf": "10-A", "Xona": "205", "Holat": "Rejalashtirilgan"}
         ]
-        st.dataframe(pd.DataFrame(schedule_data), use_container_width=True)
+        st.dataframe(pd.DataFrame(sch), use_container_width=True)
 
     # D. 3D BAHOLASH LABORATORIYASI
-    elif active_menu == "📝 3D Baholash Laboratoriyasi":
+    elif active_menu == "📝 3D Baholash":
         st.subheader("📝 3D Baholash Laboratoriyasi (Yakka Tartibda)")
         col_setup1, col_setup2 = st.columns([2, 1])
         with col_setup1:
             task_prompt = st.text_area("Topshiriq savollari:", value=st.session_state.task_input, height=100)
             st.session_state.task_input = task_prompt
             
-            if st.button("✨ Savoldan Etalon Javobni AI orqali Yaratish", use_container_width=True, type="secondary"):
+            if st.button("✨ Savoldan Etalon Javobni AI orqali Yaratish", use_container_width=True):
                 with st.spinner("AI etalon javob va rubrika mezonlarini shakllantirmoqda..."):
                     rubric_gen = RubricGenerator(gemini_api_key=st.session_state.secure_api_key)
                     auto_rubric = rubric_gen.generate_reference_and_rubric(
@@ -683,7 +795,7 @@ if user_role == "O'qituvchi":
             max_score = st.number_input("🎯 Maksimal Ball:", 1.0, 100.0, float(st.session_state.default_max_score), 1.0)
             beta_strictness = st.slider("⚖️ AI Jazosi (β):", 0.0, 1.0, float(st.session_state.default_beta), 0.1)
 
-            st.write("**🧪 Test Namunalar:**")
+            st.write("**🧪 Test namunalar:**")
             cs1, cs2 = st.columns(2)
             with cs1:
                 if st.button("🙋 Mustaqil", use_container_width=True):
@@ -740,34 +852,40 @@ if user_role == "O'qituvchi":
             c1, c2, c3 = st.columns(3)
             with c1:
                 st.markdown(f"""
-                <div class="grade-card" style="border-top: 5px solid #6366f1;">
-                    <div style="font-weight: 700; color: #818cf8;">1-BOSQICH</div>
-                    <h3 style="margin: 4px 0; color: white;">Akademik Baho</h3>
-                    <div class="big-score" style="color: #818cf8;">{eval_1['score']} <span style='font-size: 1.2rem; opacity: 0.6;'>/ {max_score}</span></div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1;">Faktik bilim va to'g'ri formulalar.</p>
+                <div class="grade-box-neon" style="border-top: 4px solid #6366f1;">
+                    <div style="font-weight: 800; color: #818cf8; font-size: 0.85rem; letter-spacing: 0.5px;">1-BOSQICH</div>
+                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: white;">Akademik Baho</h3>
+                    <div style="font-size: 2.7rem; font-weight: 900; color: #818cf8; margin: 8px 0;">
+                        {eval_1['score']} <span style='font-size: 1.2rem; color: #64748b;'>/ {max_score}</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Faktik bilim va to'g'ri formulalar.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info(eval_1.get("detailed_analysis", ""))
 
             with c2:
-                b_col = "#ef4444" if eval_2['score'] < (max_score * 0.5) else "#06b6d4"
+                b_color = "#ef4444" if eval_2['score'] < (max_score * 0.5) else "#f59e0b"
                 st.markdown(f"""
-                <div class="grade-card" style="border-top: 5px solid {b_col};">
-                    <div style="font-weight: 700; color: {b_col};">2-BOSQICH</div>
-                    <h3 style="margin: 4px 0; color: white;">AI Nazoratli Baho</h3>
-                    <div class="big-score" style="color: {b_col};">{eval_2['score']} <span style='font-size: 1.2rem; opacity: 0.6;'>/ {max_score}</span></div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1;">ChatGPT aniqlansa ball kesiladi yoki 0 qo'yiladi.</p>
+                <div class="grade-box-neon" style="border-top: 4px solid {b_color};">
+                    <div style="font-weight: 800; color: {b_color}; font-size: 0.85rem; letter-spacing: 0.5px;">2-BOSQICH</div>
+                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: white;">AI Nazoratli Baho</h3>
+                    <div style="font-size: 2.7rem; font-weight: 900; color: {b_color}; margin: 8px 0;">
+                        {eval_2['score']} <span style='font-size: 1.2rem; color: #64748b;'>/ {max_score}</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">ChatGPT aniqlansa ball kesiladi.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info(eval_2.get("explanation", ""))
 
             with c3:
                 st.markdown(f"""
-                <div class="grade-card" style="border-top: 5px solid #10b981;">
-                    <div style="font-weight: 700; color: #34d399;">3-BOSQICH</div>
-                    <h3 style="margin: 4px 0; color: white;">Empatiya Bahosi</h3>
-                    <div class="big-score" style="color: #34d399;">{eval_3['score']} <span style='font-size: 1.2rem; opacity: 0.6;'>/ {max_score}</span></div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1;">Mustaqil harakat va qadamlar uchun insoniy rag'bat.</p>
+                <div class="grade-box-neon" style="border-top: 4px solid #10b981;">
+                    <div style="font-weight: 800; color: #34d399; font-size: 0.85rem; letter-spacing: 0.5px;">3-BOSQICH</div>
+                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: white;">Empatiya Bahosi</h3>
+                    <div style="font-size: 2.7rem; font-weight: 900; color: #34d399; margin: 8px 0;">
+                        {eval_3['score']} <span style='font-size: 1.2rem; color: #64748b;'>/ {max_score}</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Mustaqil harakat uchun rag'batlantirish.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info(eval_3.get("explanation", ""))
@@ -808,7 +926,7 @@ if user_role == "O'qituvchi":
                     st.success("Baho elektron jurnalga saqlandi!")
 
     # E. OMMAVIY BAHOLASH & O'ZARO PLAGIAT
-    elif active_menu == "📂 Ommaviy Baholash & Plagiat":
+    elif active_menu == "📂 Ommaviy baholash":
         st.subheader("📂 Butun Sinf Ishlarini Bir Yo'la Baholash va Plagiat Detektori")
         batch_files = st.file_uploader("Sinf topshiriqlarini tanlang:", type=["docx", "pdf", "txt", "png", "jpg"], accept_multiple_files=True)
         if batch_files:
@@ -833,7 +951,7 @@ if user_role == "O'qituvchi":
                     st.dataframe(df_b, use_container_width=True)
 
     # F. ELEKTRON BAHOLASH JURNALI
-    elif active_menu == "📊 Elektron Baholash Jurnali":
+    elif active_menu == "📊 Jurnal":
         st.subheader("📊 Elektron Baholash Jurnali")
         if not st.session_state.grades_journal:
             st.info("Jurnal bo'sh.")
@@ -852,7 +970,7 @@ if user_role == "O'qituvchi":
             st.table(table_d)
 
     # G. RASMIY DALOLATNOMA
-    elif active_menu == "📄 Rasmiy Dalolatnoma (PDF)":
+    elif active_menu == "📄 Dalolatnoma":
         st.subheader("📄 Rasmiy Baholash Dalolatnomasi (Aкт внедрения)")
         prot_html = generate_official_protocol_html(
             "Toshkent shahar 110-sonli maktab", "Informatika", curr_u['name'],
@@ -862,7 +980,7 @@ if user_role == "O'qituvchi":
         st.components.v1.html(prot_html, height=480, scrolling=True)
 
     # H. ILMIY EKSPERIMENT
-    elif active_menu == "📈 Ilmiy Eksperiment (IV Bob)":
+    elif active_menu == "📈 Ilmiy tahlil":
         st.subheader("📈 Ilmiy Eksperiment va Validatsiya Natijalari (Dissertatsiya IV Bobi)")
         bench = get_experiment_benchmark_data()
         s_stat = bench["statistik_xulosa"]
@@ -879,16 +997,16 @@ if user_role == "O'qituvchi":
 # =========================================================================
 elif user_role == "Administrator":
     st.markdown("""
-    <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%); border-left: 5px solid #10b981; border-radius: 16px; padding: 18px 24px; margin-bottom: 22px;">
-        <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 3px 10px; border-radius: 8px; font-weight: 700; font-size: 0.8rem;">Administrator Paneli</span>
-        <h2 style="margin: 6px 0 6px 0; font-size: 1.7rem; color: white;">🛡️ Administrator Boshqaruv Markazi</h2>
-        <p style="margin: 0; opacity: 0.85; font-size: 0.92rem; color: #cbd5e1;">
-            Faqat admin yangi o'qituvchi va o'quvchilarni <b>Login va Parol</b> bilan ro'yxatdan o'tkazishi, akkauntlarni boshqarishi mumkin.
+    <div style="background: rgba(18, 24, 40, 0.85); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <span style="background: rgba(99, 102, 241, 0.2); color: #818cf8; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.82rem; border: 1px solid rgba(99, 102, 241, 0.4);">Administrator Paneli</span>
+        <h2 style="margin: 8px 0 4px 0; font-size: 1.8rem; color: #ffffff;">🛡️ Boshqaruv Markazi</h2>
+        <p style="margin: 0; font-size: 0.95rem; color: #94a3b8;">
+            Faqat admin yangi o'qituvchi va o'quvchilarni <b>Login va Parol</b> bilan ro'yxatdan o'tkazishi mumkin.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    if active_menu == "➕ Yangi Foydalanuvchi Qo'shish":
+    if active_menu == "➕ Foydalanuvchi qo'shish":
         st.subheader("➕ Yangi O'qituvchi yoki O'quvchi Qo'shish")
         col_f1, col_f2 = st.columns(2)
         with col_f1:
@@ -918,7 +1036,7 @@ elif user_role == "Administrator":
                     else:
                         st.error(msg)
 
-    elif active_menu == "👥 Akkauntlar Boshqaruvi":
+    elif active_menu == "👥 Akkauntlar":
         st.subheader("👥 Ro'yxatdan O'tgan Akkauntlar")
         show_p = st.checkbox("👁️ Parollarni ko'rsatish", value=False)
         user_rows = []
@@ -934,7 +1052,7 @@ elif user_role == "Administrator":
             })
         st.dataframe(pd.DataFrame(user_rows), use_container_width=True)
 
-    elif active_menu == "🏠 Bosh sahifa & Monitoring":
+    elif active_menu == "🏠 Bosh sahifa":
         c_m1, c_m2, c_m3 = st.columns(3)
         teachers_count = len([u for u in st.session_state.registered_users if u["role"] == "O'qituvchi"])
         students_count = len([u for u in st.session_state.registered_users if u["role"] == "O'quvchi"])
@@ -942,14 +1060,14 @@ elif user_role == "Administrator":
         c_m2.metric("O'quvchilar", f"{students_count} nafar")
         c_m3.metric("Baholangan Ishlar", f"{len(st.session_state.grades_journal)} ta")
 
-    elif active_menu == "🔐 Global API & Xavfsizlik":
+    elif active_menu == "🔐 API kaliti":
         st.subheader("🔐 Google Gemini API Kaliti")
         api_val = st.text_input("API Kaliti:", value=st.session_state.secure_api_key, type="password")
         if st.button("Saqlash", type="primary"):
             st.session_state.secure_api_key = api_val.strip()
             st.success("API saqlandi!")
 
-    elif active_menu == "📋 Tizim Audit Loglari":
+    elif active_menu == "📋 Audit loglari":
         st.subheader("📋 Tizim Audit Loglari")
         st.table(pd.DataFrame(st.session_state.audit_logs))
 
@@ -959,25 +1077,25 @@ elif user_role == "Administrator":
 # =========================================================================
 elif user_role == "O'quvchi":
     st.markdown(f"""
-    <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%); border-left: 5px solid #06b6d4; border-radius: 16px; padding: 18px 24px; margin-bottom: 22px;">
-        <span style="background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 3px 10px; border-radius: 8px; font-weight: 700; font-size: 0.8rem;">O'quvchi Kabineti</span>
-        <h2 style="margin: 6px 0 6px 0; font-size: 1.7rem; color: white;">🎓 {curr_u['name']} Shaxsiy Kabineti</h2>
-        <p style="margin: 0; opacity: 0.85; font-size: 0.92rem; color: #cbd5e1;">
+    <div style="background: rgba(18, 24, 40, 0.85); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <span style="background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.82rem; border: 1px solid rgba(6, 182, 212, 0.4);">O'quvchi Kabineti</span>
+        <h2 style="margin: 8px 0 4px 0; font-size: 1.8rem; color: #ffffff;">🎓 {curr_u['name']} Shaxsiy Kabineti</h2>
+        <p style="margin: 0; font-size: 0.95rem; color: #94a3b8;">
             Sinf: <b>{curr_u.get('group', '10-A sinf')}</b> | Login: <code>@{curr_u['login']}</code>
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    if active_menu == "🏠 Bosh sahifa & Vazifalar":
+    if active_menu == "🏠 Bosh sahifa":
         st.subheader("📚 Mening Darslarim va Faol Topshiriqlar")
-        st.info("Sizga biriktirilgan fanlar bo'yicha yangi topshiriqlar mavjud. Chap menyudan 'Uy Vazifasini Topshirish' bo'limiga o'ting.")
+        st.info("Sizga biriktirilgan fanlar bo'yicha yangi topshiriqlar mavjud. Chap menyudan 'Vazifa topshirish' bo'limiga o'ting.")
         c_st1, c_st2 = st.columns(2)
         with c_st1:
             st.metric("O'rtacha Baho", "8.9 / 10", delta="Ijobiy o'sish")
         with c_st2:
             st.metric("Tekshirilgan Ishlar", f"{len(st.session_state.grades_journal)} ta")
 
-    elif active_menu == "📤 Uy Vazifasini Topshirish":
+    elif active_menu == "📤 Vazifa topshirish":
         st.subheader("📋 Topshiriq Sharti")
         st.info(st.session_state.task_input)
         st_upload = st.file_uploader("Yechim fotosurati yoki hujjat:", type=["png", "jpg", "jpeg", "docx", "pdf", "txt"])
@@ -986,7 +1104,7 @@ elif user_role == "O'quvchi":
             st.balloons()
             st.success("Vazifa muvaffaqiyatli topshirildi!")
 
-    elif active_menu == "📜 Mening Baholarim & Tahlil":
+    elif active_menu == "📜 Baholarim":
         st.subheader("📜 Mening Baholarim")
         student_surname = curr_u['name'].split()[0]
         matching_grades = [g for g in st.session_state.grades_journal if student_surname.lower() in g["talaba"].lower()]
@@ -997,7 +1115,7 @@ elif user_role == "O'quvchi":
         else:
             st.info("Hozircha vazifangiz tekshirilmoqda.")
 
-    elif active_menu == "✉️ O'qituvchi Tavsiya Xati":
+    elif active_menu == "✉️ Tavsiya xati":
         st.subheader("✉️ O'qituvchidan Shaxsiy Tavsiya Xati")
         student_surname = curr_u['name'].split()[0]
         matching_grades = [g for g in st.session_state.grades_journal if student_surname.lower() in g["talaba"].lower()]
