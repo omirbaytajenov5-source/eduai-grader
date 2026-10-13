@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Omirbay Tajenov",
+    "role": "Administrator",
+    "login": "omirbaytajenov5@gmail.com",
+    "password": "Omir2001@",
+    "email": "omirbaytajenov5@gmail.com",
+    "group": "Boshqaruv",
+    "status": "Faol"
+  },
+  {
+    "id": 2,
+    "name": "Xolmatov Abror",
+    "role": "O'qituvchi",
+    "login": "teacher",
+    "password": "123",
+    "email": "abror@eduai.uz",
+    "group": "Informatika kafedrasi",
+    "status": "Faol"
+  },
+  {
+    "id": 3,
+    "name": "Karimova Zilola",
+    "role": "O'qituvchi",
+    "login": "karimova",
+    "password": "123",
+    "email": "karimova@eduai.uz",
+    "group": "Dasturlash kafedrasi",
+    "status": "Faol"
+  },
+  {
+    "id": 4,
+    "name": "Azizov Jasur",
+    "role": "O'quvchi",
+    "login": "jasur",
+    "password": "123",
+    "email": "jasur@eduai.uz",
+    "group": "10-A sinf",
+    "status": "Faol"
+  },
+  {
+    "id": 5,
+    "name": "Saidov Sardor",
+    "role": "O'quvchi",
+    "login": "sardor",
+    "password": "123",
+    "email": "sardor@eduai.uz",
+    "group": "10-A sinf",
+    "status": "Faol"
+  },
+  {
+    "id": 6,
+    "name": "Nodirova Malika",
+    "role": "O'quvchi",
+    "login": "malika",
+    "password": "123",
+    "email": "malika@eduai.uz",
+    "group": "10-A sinf",
+    "status": "Faol"
+  },
+  {
+    "id": 7,
+    "name": "Sinovchi Talaba",
+    "role": "O'quvchi",
+    "login": "sinov_test",
+    "password": "12345",
+    "email": "sinov@test.uz",
+    "group": "10-C",
+    "status": "Faol"
+  },
+  {
+    "id": 8,
+    "name": "Botir Zokirov",
+    "role": "O'quvchi",
+    "login": "botir_zokirov",
+    "password": "parol777",
+    "email": "botir@eduai.uz",
+    "group": "10-B sinf",
+    "status": "Faol"
+  },
+  {
+    "id": 9,
+    "name": "Quwanish",
+    "role": "O'qituvchi",
+    "login": "quwanish_teacher",
+    "password": "8RUVjd1f",
+    "email": "quwanishbakirov@gmail.com",
+    "group": "Informatika",
+    "status": "Faol"
+  }
+]
