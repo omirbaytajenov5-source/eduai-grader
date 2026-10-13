@@ -26,90 +26,88 @@ from modules.sample_data import (
 # Sahifa konfiguratsiyasi
 st.set_page_config(
     page_title="EduAI Grader - Intellektual Ta'lim Portali",
-    page_icon="⚡",
+    page_icon="✨",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # =========================================================================
-# 🚀 VIBRANT NEON & CYBER-GLASS DESIGN SYSTEM (2026 HIGH-ENERGY UI)
+# 🌈 ULTRA-YORQIN, ZAMONAVIY VA JONLI EDTECH DIZAYNI (LUMINOUS NEO-SAAS)
 # =========================================================================
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap');
     
-    /* 1. Asosiy Fon: Chuqur Obsidian & Kosmik Gradient */
+    /* 1. Global Yorug' va Jonli Fon */
     html, body, [data-testid="stAppViewContainer"], .stApp {
-        background: #090d16 !important;
+        background-color: #f8fafc !important;
         background-image: 
-            radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.18) 0%, transparent 45%),
-            radial-gradient(circle at 90% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
-            radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.12) 0%, transparent 50%) !important;
+            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+            radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%) !important;
         background-attachment: fixed !important;
-        color: #f1f5f9 !important;
-        font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif !important;
+        color: #0f172a !important;
+        font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
     }
     
     header[data-testid="stHeader"] {
         background: transparent !important;
     }
     
-    /* 2. Chap Yon Menyu (Sidebar) - Sleek Dark Glass */
+    /* 2. Chap Yon Menyu (Toza oq, zamonaviy shisha) */
     section[data-testid="stSidebar"] {
-        background: rgba(13, 18, 30, 0.95) !important;
-        backdrop-filter: blur(20px) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5) !important;
+        background: #ffffff !important;
+        border-right: 1.5px solid #e2e8f0 !important;
+        box-shadow: 4px 0 25px rgba(15, 23, 42, 0.03) !important;
     }
-    section[data-testid="stSidebar"] * {
-        color: #e2e8f0 !important;
+    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] span {
+        color: #334155 !important;
     }
     
-    /* 3. Sarlavhalar va Jonli Tipografika */
+    /* 3. Sarlavhalar */
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Outfit', sans-serif !important;
-        color: #ffffff !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        color: #0f172a !important;
         font-weight: 800 !important;
         letter-spacing: -0.02em !important;
     }
     p, span, label {
-        color: #94a3b8;
+        color: #475569;
     }
     
-    /* 4. Yuqori E'lon Tasmasi (Radiant Neon Ribbon) */
-    .neon-ticker-banner {
-        background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 35%, #06b6d4 70%, #10b981 100%) !important;
+    /* 4. Yuqori E'lon Tasmasi (Yorqin Gradient Ribbon) */
+    .luminous-banner {
+        background: linear-gradient(120deg, #4f46e5 0%, #7c3aed 35%, #06b6d4 70%, #10b981 100%) !important;
         color: #ffffff !important;
-        padding: 12px 24px;
+        padding: 13px 24px;
         border-radius: 16px;
-        font-size: 0.92rem;
+        font-size: 0.94rem;
         font-weight: 700;
-        letter-spacing: 0.3px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 24px;
+        box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.35);
         border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4), 0 0 15px rgba(6, 182, 212, 0.3);
     }
-    .neon-ticker-banner * {
+    .luminous-banner * {
         color: #ffffff !important;
     }
-    .live-pulse-dot {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background: #22c55e;
-        border-radius: 50%;
-        margin-right: 8px;
-        box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
-        animation: pulse 1.8s infinite;
+    .badge-live-ai {
+        background: rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        margin-right: 10px;
+        letter-spacing: 0.5px;
     }
     
-    /* 5. 3 ta Asosiy KPI Metrika Kartasi (3D Glowing Neon Depth) */
-    .kpi-neon-card {
-        background: rgba(18, 24, 40, 0.75) !important;
-        backdrop-filter: blur(16px) !important;
+    /* 5. 3 ta Asosiy KPI Kartasi (Luminous Pastel Depth) */
+    .metric-card-bright {
+        background: #ffffff !important;
         border-radius: 20px !important;
         padding: 24px 26px !important;
         position: relative !important;
@@ -117,49 +115,54 @@ st.markdown("""
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         margin-bottom: 20px !important;
     }
-    .kpi-neon-card:hover {
-        transform: translateY(-5px) !important;
-    }
-    .kpi-card-indigo {
-        border: 1px solid rgba(99, 102, 241, 0.35) !important;
-        box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.25), inset 0 0 20px rgba(99, 102, 241, 0.08) !important;
-    }
-    .kpi-card-indigo:hover {
-        border-color: #818cf8 !important;
-        box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.45) !important;
-    }
-    .kpi-card-emerald {
-        border: 1px solid rgba(16, 185, 129, 0.35) !important;
-        box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.25), inset 0 0 20px rgba(16, 185, 129, 0.08) !important;
-    }
-    .kpi-card-emerald:hover {
-        border-color: #34d399 !important;
-        box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.45) !important;
-    }
-    .kpi-card-amber {
-        border: 1px solid rgba(245, 158, 11, 0.35) !important;
-        box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.25), inset 0 0 20px rgba(245, 158, 11, 0.08) !important;
-    }
-    .kpi-card-amber:hover {
-        border-color: #fbbf24 !important;
-        box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.45) !important;
+    .metric-card-bright:hover {
+        transform: translateY(-4px) !important;
     }
     
-    .kpi-title {
-        font-size: 0.95rem !important;
-        font-weight: 700 !important;
-        color: #94a3b8 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.8px !important;
-        margin-bottom: 8px !important;
+    .card-bright-indigo {
+        background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%) !important;
+        border: 1.5px solid #bfdbfe !important;
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.12), 0 4px 6px -2px rgba(59, 130, 246, 0.05) !important;
     }
-    .kpi-number {
-        font-size: 2.9rem !important;
+    .card-bright-indigo:hover {
+        border-color: #60a5fa !important;
+        box-shadow: 0 16px 30px -5px rgba(59, 130, 246, 0.22) !important;
+    }
+    
+    .card-bright-emerald {
+        background: linear-gradient(145deg, #ffffff 0%, #ecfdf5 100%) !important;
+        border: 1.5px solid #a7f3d0 !important;
+        box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.12), 0 4px 6px -2px rgba(16, 185, 129, 0.05) !important;
+    }
+    .card-bright-emerald:hover {
+        border-color: #34d399 !important;
+        box-shadow: 0 16px 30px -5px rgba(16, 185, 129, 0.22) !important;
+    }
+    
+    .card-bright-amber {
+        background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%) !important;
+        border: 1.5px solid #fde68a !important;
+        box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.12), 0 4px 6px -2px rgba(245, 158, 11, 0.05) !important;
+    }
+    .card-bright-amber:hover {
+        border-color: #fbbf24 !important;
+        box-shadow: 0 16px 30px -5px rgba(245, 158, 11, 0.22) !important;
+    }
+    
+    .metric-title-bright {
+        font-size: 0.92rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 6px !important;
+    }
+    .metric-num-bright {
+        font-size: 2.85rem !important;
         font-weight: 900 !important;
         line-height: 1.05 !important;
         margin: 0 !important;
     }
-    .kpi-badge-icon {
+    .metric-icon-bright {
         position: absolute !important;
         top: 22px !important;
         right: 22px !important;
@@ -170,134 +173,126 @@ st.markdown("""
         align-items: center !important;
         justify-content: center !important;
         font-size: 1.45rem !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important;
     }
     
-    /* 6. 6 ta Fan Kartochkasi (Vibrant Glowing Subject Cards) */
-    .subject-neon-card {
-        background: rgba(18, 24, 40, 0.8) !important;
-        backdrop-filter: blur(14px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* 6. Fanlar va Guruhlar Kartochkalari (Luminous Class Cards) */
+    .class-card-bright {
+        background: #ffffff !important;
+        border: 1.5px solid #e2e8f0 !important;
         border-radius: 20px !important;
         padding: 22px !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 14px !important;
         position: relative !important;
         overflow: hidden !important;
+        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
     }
-    .subject-neon-card:hover {
-        transform: translateY(-5px) !important;
-        border-color: rgba(99, 102, 241, 0.5) !important;
-        box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.3), 0 0 20px rgba(6, 182, 212, 0.2) !important;
+    .class-card-bright:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 16px 32px -4px rgba(99, 102, 241, 0.15) !important;
+        border-color: #818cf8 !important;
     }
-    .subject-neon-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #6366f1, #06b6d4, #10b981);
+    .card-top-strip {
+        height: 5px;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 14px;
     }
-    .subject-card-title {
-        font-size: 1.35rem !important;
+    .class-card-title {
+        font-size: 1.3rem !important;
         font-weight: 800 !important;
-        color: #ffffff !important;
-        margin: 0 0 4px 0 !important;
+        color: #0f172a !important;
+        margin: 0 0 6px 0 !important;
     }
-    .subject-card-sub {
-        font-size: 0.86rem !important;
-        color: #94a3b8 !important;
-        margin-bottom: 18px !important;
-        display: flex;
-        align-items: center;
-        gap: 6px;
+    .tag-pill {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 8px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        margin-right: 6px;
     }
+    .tag-blue { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .tag-green { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+    .tag-purple { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
     
-    /* 7. Tugmalar (Vibrant Neon Pill Buttons) */
+    /* 7. Tugmalar (Vibrant Modern Pill Buttons) */
     .stButton>button {
-        background: rgba(30, 41, 59, 0.85) !important;
-        color: #f8fafc !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        background-color: #ffffff !important;
+        color: #334155 !important;
+        border: 1.5px solid #cbd5e1 !important;
         border-radius: 12px !important;
         font-weight: 700 !important;
         font-size: 0.83rem !important;
         padding: 7px 14px !important;
-        transition: all 0.25s ease !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
     }
     .stButton>button:hover {
-        background: rgba(51, 65, 85, 0.95) !important;
-        border-color: #06b6d4 !important;
-        color: #38bdf8 !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 6px 18px rgba(6, 182, 212, 0.3) !important;
+        background-color: #f8fafc !important;
+        border-color: #6366f1 !important;
+        color: #4f46e5 !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15) !important;
     }
     .stButton>button[kind="primary"] {
-        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #06b6d4 100%) !important;
+        background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #06b6d4 100%) !important;
         color: #ffffff !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
-        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.5) !important;
+        border: none !important;
+        box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
     }
     .stButton>button[kind="primary"]:hover {
-        background: linear-gradient(135deg, #4f46e5 0%, #4338ca 50%, #0891b2 100%) !important;
-        box-shadow: 0 6px 25px rgba(99, 102, 241, 0.7) !important;
+        background: linear-gradient(135deg, #4338ca 0%, #4f46e5 50%, #0891b2 100%) !important;
+        box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45) !important;
         color: #ffffff !important;
     }
     
-    /* 8. Yon Menyu Radio Tugmalari (Glow Pill Navigation) */
+    /* 8. Yon Menyuning Radio Tugmalari (Active Pill) */
     div[role="radiogroup"] > label {
-        background: rgba(255, 255, 255, 0.03) !important;
+        background: #ffffff !important;
+        border: 1px solid #f1f5f9 !important;
         border-radius: 12px !important;
         padding: 10px 16px !important;
         margin-bottom: 6px !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        color: #cbd5e1 !important;
+        color: #475569 !important;
         font-weight: 600 !important;
         font-size: 0.92rem !important;
         transition: all 0.2s ease !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
     }
     div[role="radiogroup"] > label:hover {
-        background: rgba(255, 255, 255, 0.08) !important;
-        color: #ffffff !important;
-        border-color: rgba(255, 255, 255, 0.15) !important;
+        background: #f8fafc !important;
+        color: #4f46e5 !important;
+        border-color: #c7d2fe !important;
+        transform: translateX(3px) !important;
     }
     div[role="radiogroup"] > label:has(input:checked) {
-        background: linear-gradient(90deg, rgba(99, 102, 241, 0.3) 0%, rgba(6, 182, 212, 0.15) 100%) !important;
-        color: #ffffff !important;
+        background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%) !important;
+        color: #4338ca !important;
         font-weight: 800 !important;
-        border: 1px solid #6366f1 !important;
-        box-shadow: 0 0 15px rgba(99, 102, 241, 0.35) !important;
+        border: 1.5px solid #818cf8 !important;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15) !important;
     }
     
-    /* 9. Matn maydonlari va Tanlash qutilari */
+    /* 9. Matn maydonlari */
     .stTextInput input, .stTextArea textarea, .stSelectbox [data-baseweb="select"] {
-        background-color: rgba(18, 24, 40, 0.8) !important;
-        color: #ffffff !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border: 1.5px solid #cbd5e1 !important;
         border-radius: 12px !important;
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
     }
     .stTextInput input:focus, .stTextArea textarea:focus {
         border-color: #6366f1 !important;
-        box-shadow: 0 0 15px rgba(99, 102, 241, 0.35) !important;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
     }
     
     /* 10. Jadvallar */
     .stDataFrame, .stTable {
-        background: rgba(18, 24, 40, 0.8) !important;
+        background: #ffffff !important;
         border-radius: 16px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border: 1.5px solid #e2e8f0 !important;
         overflow: hidden !important;
-    }
-    
-    /* 11. Baholash Karta Bloki */
-    .grade-box-neon {
-        background: rgba(18, 24, 40, 0.85) !important;
-        backdrop-filter: blur(16px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 20px !important;
-        padding: 24px !important;
-        margin-bottom: 16px !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -314,55 +309,61 @@ if "teacher_classes" not in st.session_state:
         {
             "id": 1,
             "subject": "Veb Dasturlash",
-            "class_info": "10-A • Butun sinf • 12 o'quvchi",
+            "class_level": "10-A sinf",
+            "student_count": "12 o'quvchi",
             "full_name": "Veb Dasturlash (Full-Stack & Cloud)",
             "room": "304-xona",
-            "badge_color": "#06b6d4",
+            "strip": "linear-gradient(90deg, #3b82f6, #06b6d4)",
             "syllabus": ["HTML5/CSS3 zamonaviy dizayn", "Flexbox va CSS Grid", "JavaScript Async & DOM", "Node.js REST API"]
         },
         {
             "id": 2,
             "subject": "Tarmoq Texnologiyalari",
-            "class_info": "10-A • Butun sinf • 10 o'quvchi",
+            "class_level": "10-A sinf",
+            "student_count": "10 o'quvchi",
             "full_name": "Tarmoq Texnologiyalari va Kiberxavfsizlik",
             "room": "Server xonasi",
-            "badge_color": "#10b981",
+            "strip": "linear-gradient(90deg, #10b981, #059669)",
             "syllabus": ["OSI va TCP/IP modellari", "IP subnetting", "Router & Firewall konfiguratsiya", "Penetration testing"]
         },
         {
             "id": 3,
             "subject": "Grafika va Dizayn",
-            "class_info": "10-A • Butun sinf • 7 o'quvchi",
+            "class_level": "10-A sinf",
+            "student_count": "7 o'quvchi",
             "full_name": "Kompyuter Grafikasi & UI/UX Muhandisligi",
             "room": "Dizayn studiyasi",
-            "badge_color": "#a855f7",
+            "strip": "linear-gradient(90deg, #8b5cf6, #ec4899)",
             "syllabus": ["Vektorli grafika", "Figma Design System", "Micro-animations", "3D WebGL asoslari"]
         },
         {
             "id": 4,
             "subject": "Mobil Dasturlash",
-            "class_info": "10-A • Butun sinf • 15 o'quvchi",
+            "class_level": "10-A sinf",
+            "student_count": "15 o'quvchi",
             "full_name": "Krossplatformali Mobil Dasturlash (Flutter)",
             "room": "205-xona",
-            "badge_color": "#f43f5e",
+            "strip": "linear-gradient(90deg, #f43f5e, #fb923c)",
             "syllabus": ["Flutter Widget daraxti", "State Management (Bloc)", "Camera & GPS integratsiyasi", "App Store yuklash"]
         },
         {
             "id": 5,
             "subject": "Informatika va AT",
-            "class_info": "8-C • Butun sinf • 11 o'quvchi",
+            "class_level": "8-C sinf",
+            "student_count": "11 o'quvchi",
             "full_name": "Informatika va Axborot Texnologiyalari",
             "room": "102-xona",
-            "badge_color": "#38bdf8",
+            "strip": "linear-gradient(90deg, #0ea5e9, #38bdf8)",
             "syllabus": ["Axborot tizimlari", "Katta ma'lumotlar tahlili", "SQL ma'lumotlar bazasi", "Algoritmik mantiq"]
         },
         {
             "id": 6,
             "subject": "Sun'iy Intellekt & Python",
-            "class_info": "8-A • Butun sinf • 12 o'quvchi",
+            "class_level": "8-A sinf",
+            "student_count": "12 o'quvchi",
             "full_name": "Sun'iy Intellekt va Python Algoritmlari",
             "room": "AI Laboratoriyasi",
-            "badge_color": "#f59e0b",
+            "strip": "linear-gradient(90deg, #f59e0b, #eab308)",
             "syllabus": ["Python funksiyalar & Rekursiya", "NumPy & Pandas tahlili", "Neyrotarmoqlar kirish", "3D Baholash modeli"]
         }
     ]
@@ -411,19 +412,19 @@ if "grades_journal" not in st.session_state:
     ]
 
 # =========================================================================
-# KIRISH OYNASI (CYBER-GLASS AUTH TERMINAL)
+# KIRISH OYNASI (LUMINOUS MODERN AUTH CARD)
 # =========================================================================
 if st.session_state.current_user is None:
     st.markdown("""
-    <div style="max-width: 580px; margin: 40px auto 16px auto; text-align: center;">
+    <div style="max-width: 540px; margin: 40px auto 16px auto; text-align: center;">
         <div style="display: inline-flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-            <span style="font-size: 2.8rem;">⚡</span>
-            <span style="font-size: 2.6rem; font-weight: 900; background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <span style="font-size: 2.6rem;">✨</span>
+            <span style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 EduAI<span style="color: #06b6d4;">.uz</span>
             </span>
         </div>
-        <p style="font-size: 1.05rem; color: #94a3b8; margin: 0 0 24px 0;">
-            Aydın keleshek sarı — 3D Sun'iy Intellekt Baholash va Ta'lim Portali
+        <p style="font-size: 1.05rem; color: #64748b; font-weight: 600; margin: 0 0 24px 0;">
+            Aydın keleshek sarı — 3D Intellektual Ta'lim va Baholash Portali
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -431,8 +432,8 @@ if st.session_state.current_user is None:
     c_l1, c_l2, c_l3 = st.columns([1, 2, 1])
     with c_l2:
         st.markdown("""
-        <div style="background: rgba(18, 24, 40, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 24px; padding: 34px; box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(99, 102, 241, 0.2);">
-            <h3 style="margin: 0 0 18px 0; font-size: 1.45rem; font-weight: 800; color: #ffffff; text-align: center;">🔐 Tizimga Kirish</h3>
+        <div style="background: #ffffff; border: 1.5px solid #e0e7ff; border-radius: 24px; padding: 34px; box-shadow: 0 20px 45px -10px rgba(79, 70, 229, 0.12);">
+            <h3 style="margin: 0 0 18px 0; font-size: 1.45rem; font-weight: 800; color: #0f172a; text-align: center;">🔐 Tizimga Kirish</h3>
         """, unsafe_allow_html=True)
         
         input_login = st.text_input("Login:", placeholder="omirbaytajenov5@gmail.com yoki teacher")
@@ -453,7 +454,7 @@ if st.session_state.current_user is None:
             else:
                 st.error("Login yoki parol noto'g'ri! Iltimos, qayta tekshiring.")
 
-        st.markdown("<hr style='margin: 22px 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);'>", unsafe_allow_html=True)
+        st.markdown("<hr style='margin: 22px 0; border: none; border-top: 1px solid #f1f5f9;'>", unsafe_allow_html=True)
         st.caption("⚡ **Tezkor kirish tugmalari:**")
         c_dem1, c_dem2, c_dem3 = st.columns(3)
         with c_dem1:
@@ -480,18 +481,18 @@ curr_u = st.session_state.current_user
 user_role = curr_u["role"]
 initials = "".join([part[0].upper() for part in curr_u['name'].split()[:2]])
 
-# SIDEBAR: GLOWING CYBER-GLASS NAVIGATION
+# SIDEBAR: LUMINOUS NEO-NAVIGATION
 with st.sidebar:
     st.markdown("""
-    <div style="display: flex; align-items: center; gap: 12px; padding: 6px 0 18px 0; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">
-        <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);">
-            ⚡
+    <div style="display: flex; align-items: center; gap: 12px; padding: 6px 0 18px 0; margin-bottom: 12px; border-bottom: 1.5px solid #f1f5f9;">
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);">
+            ✨
         </div>
         <div>
-            <div style="font-size: 1.35rem; font-weight: 900; background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <div style="font-size: 1.35rem; font-weight: 900; background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 EduAI<span style="color: #06b6d4;">.uz</span>
             </div>
-            <div style="font-size: 0.72rem; color: #06b6d4; font-weight: 700; letter-spacing: 0.5px;">Aydın keleshek sarı</div>
+            <div style="font-size: 0.72rem; color: #64748b; font-weight: 700; letter-spacing: 0.5px;">Aydın keleshek sarı</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -539,13 +540,13 @@ with st.sidebar:
 
     # Profil kartasi (Pastda: O'mirbay Ta'jenov O'qituvchi)
     st.markdown(f"""
-    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; margin-bottom: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-        <div style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #06b6d4); color: white; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);">
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; border-radius: 16px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #4f46e5, #06b6d4); color: white; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);">
             {initials}
         </div>
         <div style="overflow: hidden;">
-            <div style="font-size: 0.92rem; font-weight: 800; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{curr_u['name']}</div>
-            <div style="font-size: 0.75rem; color: #38bdf8; font-weight: 700;">{user_role}</div>
+            <div style="font-size: 0.92rem; font-weight: 800; color: #0f172a; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{curr_u['name']}</div>
+            <div style="font-size: 0.75rem; color: #2563eb; font-weight: 700;">{user_role}</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -560,84 +561,84 @@ with st.sidebar:
 # 🧑‍🏫 O'QITUVCHI PANELI
 # =========================================================================
 if user_role == "O'qituvchi":
-    # 1. YUQORI RADIANT E'LON TASMASI
+    # 1. YUQORI LUMINOUS E'LON TASMASI
     st.markdown("""
-    <div class="neon-ticker-banner">
+    <div class="luminous-banner">
         <div style="display: flex; align-items: center;">
-            <span class="live-pulse-dot"></span>
+            <span class="badge-live-ai">✨ AI LIVE</span>
             <span>📢 <b>Xush kelibsiz!</b> EduAI ta'lim platformasiga xush kelibsiz! Bugungi mashg'ulotlaringizda zafar tilaymiz!</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 18px; font-size: 0.88rem; font-weight: 700;">
-            <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 8px;">🇺🇿 O'zbek ▾</span>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 0.88rem; font-weight: 700;">
+            <span style="background: rgba(255,255,255,0.22); padding: 4px 12px; border-radius: 20px;">🇺🇿 O'zbek ▾</span>
             <span>🔔 Bildirishnoma (2)</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # A. BOSH SAHIFA: O'QITUVCHI PANELI (HIGH-ENERGY DASHBOARD)
+    # A. BOSH SAHIFA: O'QITUVCHI PANELI (YORQIN VA JONLI DASHBOARD)
     if active_menu == "🏠 Bosh sahifa":
         col_hdr1, col_hdr2 = st.columns([4, 1.2])
         with col_hdr1:
             st.markdown("""
-            <h2 style="margin: 0; font-size: 2.1rem; font-weight: 900; background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 60%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <h2 style="margin: 0; font-size: 2.1rem; font-weight: 900; color: #0f172a;">
                 O'qituvchi paneli
             </h2>
-            <p style="margin: 4px 0 22px 0; color: #94a3b8; font-size: 1rem;">
-                Guruhlaringiz — elektron jurnal, uy vazifalari va 3D intellektual baholash shu yerda.
+            <p style="margin: 4px 0 22px 0; color: #64748b; font-size: 1rem; font-weight: 500;">
+                Guruhlaringiz — elektron jurnal, dars jadvali, uy vazifalari va 3D intellektual baholash shu yerda.
             </p>
             """, unsafe_allow_html=True)
         with col_hdr2:
             st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
-            if st.button("⚡ Sinflar Ro'yxati →", type="primary", use_container_width=True):
+            if st.button("✨ Sinflar Ro'yxati →", type="primary", use_container_width=True):
                 st.session_state.class_modal_view = {"type": "classes_list"}
 
-        # 3 TA STATISTIK KARTOChKA (GLOWING 3D KPI CARDS)
+        # 3 TA STATISTIK KARTOChKA (LUMINOUS PASTEL DEPTH)
         col_m1, col_m2, col_m3 = st.columns(3)
         with col_m1:
             st.markdown("""
-            <div class="kpi-neon-card kpi-card-indigo">
-                <div class="kpi-title">Guruhlarim</div>
-                <div class="kpi-number" style="background: linear-gradient(135deg, #818cf8 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">6</div>
-                <div class="kpi-badge-icon" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.4);">📚</div>
+            <div class="metric-card-bright card-bright-indigo">
+                <div class="metric-title-bright" style="color: #2563eb;">Guruhlarim</div>
+                <div class="metric-num-bright" style="color: #1e40af;">6</div>
+                <div class="metric-icon-bright" style="background: #dbeafe; color: #1d4ed8;">📚</div>
             </div>
             """, unsafe_allow_html=True)
 
         with col_m2:
             st.markdown("""
-            <div class="kpi-neon-card kpi-card-emerald">
-                <div class="kpi-title">O'quvchilar</div>
-                <div class="kpi-number" style="background: linear-gradient(135deg, #34d399 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">78</div>
-                <div class="kpi-badge-icon" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">🎓</div>
+            <div class="metric-card-bright card-bright-emerald">
+                <div class="metric-title-bright" style="color: #059669;">O'quvchilar</div>
+                <div class="metric-num-bright" style="color: #065f46;">78</div>
+                <div class="metric-icon-bright" style="background: #d1fae5; color: #047857;">🎓</div>
             </div>
             """, unsafe_allow_html=True)
 
         with col_m3:
             unreviewed_count = max(1, 14 - len(st.session_state.grades_journal))
             st.markdown(f"""
-            <div class="kpi-neon-card kpi-card-amber">
-                <div class="kpi-title">Baholanmagan vazifa</div>
-                <div class="kpi-number" style="background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{unreviewed_count}</div>
-                <div style="font-size: 0.82rem; color: #fbbf24; font-weight: 700; margin-top: 4px;">⚡ Tekshirishni kutmoqda</div>
-                <div class="kpi-badge-icon" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4);">⏳</div>
+            <div class="metric-card-bright card-bright-amber">
+                <div class="metric-title-bright" style="color: #d97706;">Baholanmagan vazifa</div>
+                <div class="metric-num-bright" style="color: #92400e;">{unreviewed_count}</div>
+                <div style="font-size: 0.82rem; color: #b45309; font-weight: 700; margin-top: 4px;">⚡ Tekshirishni kutmoqda</div>
+                <div class="metric-icon-bright" style="background: #fef3c7; color: #b45309;">⏳</div>
             </div>
             """, unsafe_allow_html=True)
 
-        st.markdown("<h3 style='margin: 14px 0 18px 0; font-size: 1.45rem; font-weight: 800; color: #ffffff;'>Mening Guruhlarim va Fanlarim</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='margin: 14px 0 18px 0; font-size: 1.45rem; font-weight: 800; color: #0f172a;'>Mening Guruhlarim va Fanlarim</h3>", unsafe_allow_html=True)
 
-        # 6 TA FAN KARTOChKASI (GRID: JONLI VA YORQIN AKTSENTLAR BILAN)
+        # 6 TA FAN KARTOChKASI (GRID: HAR BIRI O'ZIGA XOS YORQIN IDENTIFIKATORGA EGA)
         g1, g2, g3 = st.columns(3)
         grid_cols = [g1, g2, g3]
 
         for idx, item in enumerate(st.session_state.teacher_classes):
             with grid_cols[idx % 3]:
                 st.markdown(f"""
-                <div class="subject-neon-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                        <span class="subject-card-title">{item['subject']}</span>
-                        <span style="background: rgba(255,255,255,0.08); color: {item['badge_color']}; border: 1px solid {item['badge_color']}40; padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 800;">{item['room']}</span>
-                    </div>
-                    <div class="subject-card-sub">
-                        <span>{item['class_info']}</span>
+                <div class="class-card-bright">
+                    <div class="card-top-strip" style="background: {item['strip']};"></div>
+                    <div class="class-card-title">{item['subject']}</div>
+                    <div style="margin-bottom: 18px;">
+                        <span class="tag-pill tag-blue">{item['class_level']}</span>
+                        <span class="tag-pill tag-green">{item['student_count']}</span>
+                        <span class="tag-pill tag-purple">{item['room']}</span>
                     </div>
                 """, unsafe_allow_html=True)
 
@@ -659,14 +660,14 @@ if user_role == "O'qituvchi":
 
                 st.markdown("</div>", unsafe_allow_html=True)
 
-        # TANLANGAN TUGMA MA'LUMOTI (DRAWER POPUP)
+        # TANLANGAN TUGMA MA'LUMOTI (INTERAKTIV OYNA)
         if st.session_state.class_modal_view:
             mv = st.session_state.class_modal_view
             st.markdown("---")
             
             if mv.get("type") == "students":
                 cls_item = mv["class"]
-                st.subheader(f"👥 {cls_item['subject']} ({cls_item['class_info']}) — O'quvchilar ro'yxati")
+                st.subheader(f"👥 {cls_item['subject']} ({cls_item['class_level']}) — O'quvchilar ro'yxati")
                 st_data = [
                     {"№": 1, "F.I.Sh": "Azizov Jasur", "Holat": "Faol", "Oxirgi baho": "9.1/10"},
                     {"№": 2, "F.I.Sh": "Karimov Dilshod", "Holat": "Faol", "Oxirgi baho": "Kutilmoqda"},
@@ -700,7 +701,7 @@ if user_role == "O'qituvchi":
 
             elif mv.get("type") == "ai_redirect":
                 cls_item = mv["class"]
-                st.success(f"⚡ **{cls_item['full_name']}** fani bo'yicha ma'lumotlar yuklandi! Chap menyudan **'📝 3D Baholash'** bo'limiga o'ting.")
+                st.success(f"✨ **{cls_item['full_name']}** fani bo'yicha ma'lumotlar yuklandi! Chap menyudan **'📝 3D Baholash'** bo'limiga o'ting.")
                 if st.button("Tushundim ✖️", key="close_redirect"):
                     st.session_state.class_modal_view = None
                     st.rerun()
@@ -712,7 +713,7 @@ if user_role == "O'qituvchi":
                     cls_table.append({
                         "Fan": c["subject"],
                         "To'liq nomi": c["full_name"],
-                        "Sinf": c["class_info"],
+                        "Sinf": c["class_level"],
                         "Xona": c["room"]
                     })
                 st.dataframe(pd.DataFrame(cls_table), use_container_width=True)
@@ -730,15 +731,15 @@ if user_role == "O'qituvchi":
             for c in st.session_state.teacher_classes:
                 c_table.append({
                     "Fan": c["subject"],
-                    "Sinf": c["class_info"],
+                    "Sinf": f"{c['class_level']} ({c['student_count']})",
                     "Xona": c["room"],
                     "Mavzular": len(c["syllabus"])
                 })
             st.dataframe(pd.DataFrame(c_table), use_container_width=True)
         with col_c2:
             st.markdown("""
-            <div style="background: rgba(18, 24, 40, 0.85); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; padding: 20px;">
-                <h4 style="margin: 0 0 12px 0; color: white;">➕ Yangi Guruh</h4>
+            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 18px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                <h4 style="margin: 0 0 12px 0; color: #0f172a;">➕ Yangi Guruh</h4>
             """, unsafe_allow_html=True)
             new_s = st.text_input("Fan:", placeholder="Robototexnika")
             new_c = st.text_input("Sinf:", placeholder="11-A")
@@ -747,10 +748,11 @@ if user_role == "O'qituvchi":
                 st.session_state.teacher_classes.append({
                     "id": len(st.session_state.teacher_classes) + 1,
                     "subject": new_s,
-                    "class_info": f"{new_c} • Butun sinf • 15 o'quvchi",
+                    "class_level": f"{new_c} sinf",
+                    "student_count": "15 o'quvchi",
                     "full_name": new_s,
                     "room": f"{new_r}-xona",
-                    "badge_color": "#10b981",
+                    "strip": "linear-gradient(90deg, #10b981, #06b6d4)",
                     "syllabus": ["1-Mavzu: Kirish", "2-Mavzu: Amaliyot"]
                 })
                 st.success("Guruh qo'shildi!")
@@ -852,40 +854,40 @@ if user_role == "O'qituvchi":
             c1, c2, c3 = st.columns(3)
             with c1:
                 st.markdown(f"""
-                <div class="grade-box-neon" style="border-top: 4px solid #6366f1;">
-                    <div style="font-weight: 800; color: #818cf8; font-size: 0.85rem; letter-spacing: 0.5px;">1-BOSQICH</div>
-                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: white;">Akademik Baho</h3>
-                    <div style="font-size: 2.7rem; font-weight: 900; color: #818cf8; margin: 8px 0;">
+                <div style="background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%); border: 2px solid #6366f1; border-radius: 20px; padding: 24px; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.12); margin-bottom: 16px;">
+                    <div style="font-weight: 800; color: #4f46e5; font-size: 0.85rem; letter-spacing: 0.5px;">1-BOSQICH</div>
+                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: #0f172a;">Akademik Baho</h3>
+                    <div style="font-size: 2.7rem; font-weight: 900; color: #4338ca; margin: 8px 0;">
                         {eval_1['score']} <span style='font-size: 1.2rem; color: #64748b;'>/ {max_score}</span>
                     </div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Faktik bilim va to'g'ri formulalar.</p>
+                    <p style="font-size: 0.85rem; color: #475569; margin: 0;">Faktik bilim va to'g'ri formulalar.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info(eval_1.get("detailed_analysis", ""))
 
             with c2:
-                b_color = "#ef4444" if eval_2['score'] < (max_score * 0.5) else "#f59e0b"
+                b_color = "#ef4444" if eval_2['score'] < (max_score * 0.5) else "#d97706"
                 st.markdown(f"""
-                <div class="grade-box-neon" style="border-top: 4px solid {b_color};">
+                <div style="background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%); border: 2px solid {b_color}; border-radius: 20px; padding: 24px; box-shadow: 0 10px 25px rgba(245, 158, 11, 0.12); margin-bottom: 16px;">
                     <div style="font-weight: 800; color: {b_color}; font-size: 0.85rem; letter-spacing: 0.5px;">2-BOSQICH</div>
-                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: white;">AI Nazoratli Baho</h3>
+                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: #0f172a;">AI Nazoratli Baho</h3>
                     <div style="font-size: 2.7rem; font-weight: 900; color: {b_color}; margin: 8px 0;">
                         {eval_2['score']} <span style='font-size: 1.2rem; color: #64748b;'>/ {max_score}</span>
                     </div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">ChatGPT aniqlansa ball kesiladi.</p>
+                    <p style="font-size: 0.85rem; color: #475569; margin: 0;">ChatGPT aniqlansa ball kesiladi.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info(eval_2.get("explanation", ""))
 
             with c3:
                 st.markdown(f"""
-                <div class="grade-box-neon" style="border-top: 4px solid #10b981;">
-                    <div style="font-weight: 800; color: #34d399; font-size: 0.85rem; letter-spacing: 0.5px;">3-BOSQICH</div>
-                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: white;">Empatiya Bahosi</h3>
-                    <div style="font-size: 2.7rem; font-weight: 900; color: #34d399; margin: 8px 0;">
+                <div style="background: linear-gradient(145deg, #ffffff 0%, #ecfdf5 100%); border: 2px solid #10b981; border-radius: 20px; padding: 24px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.12); margin-bottom: 16px;">
+                    <div style="font-weight: 800; color: #059669; font-size: 0.85rem; letter-spacing: 0.5px;">3-BOSQICH</div>
+                    <h3 style="margin: 4px 0; font-size: 1.35rem; color: #0f172a;">Empatiya Bahosi</h3>
+                    <div style="font-size: 2.7rem; font-weight: 900; color: #047857; margin: 8px 0;">
                         {eval_3['score']} <span style='font-size: 1.2rem; color: #64748b;'>/ {max_score}</span>
                     </div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Mustaqil harakat uchun rag'batlantirish.</p>
+                    <p style="font-size: 0.85rem; color: #475569; margin: 0;">Mustaqil harakat uchun rag'batlantirish.</p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info(eval_3.get("explanation", ""))
@@ -997,10 +999,10 @@ if user_role == "O'qituvchi":
 # =========================================================================
 elif user_role == "Administrator":
     st.markdown("""
-    <div style="background: rgba(18, 24, 40, 0.85); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        <span style="background: rgba(99, 102, 241, 0.2); color: #818cf8; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.82rem; border: 1px solid rgba(99, 102, 241, 0.4);">Administrator Paneli</span>
-        <h2 style="margin: 8px 0 4px 0; font-size: 1.8rem; color: #ffffff;">🛡️ Boshqaruv Markazi</h2>
-        <p style="margin: 0; font-size: 0.95rem; color: #94a3b8;">
+    <div style="background: #ffffff; border: 1.5px solid #e0e7ff; border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.08);">
+        <span style="background: #eef2ff; color: #4f46e5; padding: 4px 14px; border-radius: 10px; font-weight: 800; font-size: 0.82rem; border: 1px solid #c7d2fe;">Administrator Paneli</span>
+        <h2 style="margin: 8px 0 4px 0; font-size: 1.8rem; color: #0f172a;">🛡️ Boshqaruv Markazi</h2>
+        <p style="margin: 0; font-size: 0.95rem; color: #64748b;">
             Faqat admin yangi o'qituvchi va o'quvchilarni <b>Login va Parol</b> bilan ro'yxatdan o'tkazishi mumkin.
         </p>
     </div>
@@ -1077,10 +1079,10 @@ elif user_role == "Administrator":
 # =========================================================================
 elif user_role == "O'quvchi":
     st.markdown(f"""
-    <div style="background: rgba(18, 24, 40, 0.85); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        <span style="background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.82rem; border: 1px solid rgba(6, 182, 212, 0.4);">O'quvchi Kabineti</span>
-        <h2 style="margin: 8px 0 4px 0; font-size: 1.8rem; color: #ffffff;">🎓 {curr_u['name']} Shaxsiy Kabineti</h2>
-        <p style="margin: 0; font-size: 0.95rem; color: #94a3b8;">
+    <div style="background: #ffffff; border: 1.5px solid #a5f3fc; border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(6, 182, 212, 0.08);">
+        <span style="background: #cffafe; color: #0891b2; padding: 4px 14px; border-radius: 10px; font-weight: 800; font-size: 0.82rem; border: 1px solid #a5f3fc;">O'quvchi Kabineti</span>
+        <h2 style="margin: 8px 0 4px 0; font-size: 1.8rem; color: #0f172a;">🎓 {curr_u['name']} Shaxsiy Kabineti</h2>
+        <p style="margin: 0; font-size: 0.95rem; color: #64748b;">
             Sinf: <b>{curr_u.get('group', '10-A sinf')}</b> | Login: <code>@{curr_u['login']}</code>
         </p>
     </div>
