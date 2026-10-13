@@ -15,6 +15,7 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 USERS_FILE = os.path.join(DATA_DIR, "users.json")
 GRADES_FILE = os.path.join(DATA_DIR, "grades.json")
 AUDIT_FILE = os.path.join(DATA_DIR, "audit.json")
+SETTINGS_FILE = os.path.join(DATA_DIR, "settings.json")
 
 INITIAL_USERS = [
     {"id": 1, "name": "Omirbay Tajenov", "role": "Administrator", "login": "omirbaytajenov5@gmail.com", "password": "Omir2001@", "email": "omirbaytajenov5@gmail.com", "group": "Boshqaruv", "status": "Faol"},
@@ -37,6 +38,22 @@ def init_db():
     if not os.path.exists(AUDIT_FILE):
         with open(AUDIT_FILE, "w", encoding="utf-8") as f:
             json.dump([], f, ensure_ascii=False, indent=2)
+    if not os.path.exists(SETTINGS_FILE):
+        with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+            json.dump({"gemini_api_key": "", "default_max_score": 10.0, "default_beta": 1.0}, f, ensure_ascii=False, indent=2)
+
+def load_settings() -> Dict[str, Any]:
+    init_db()
+    try:
+        with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {"gemini_api_key": "", "default_max_score": 10.0, "default_beta": 1.0}
+
+def save_settings(settings: Dict[str, Any]):
+    init_db()
+    with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+        json.dump(settings, f, ensure_ascii=False, indent=2)
 
 def load_users() -> List[Dict[str, Any]]:
     init_db()

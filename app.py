@@ -14,7 +14,7 @@ from modules.plagiarism_checker import PeerPlagiarismChecker
 from modules.batch_grader import BatchGrader
 from modules.statistics_module import get_experiment_benchmark_data, calculate_qwk, calculate_pearson_r, calculate_mae
 from modules.report_generator import generate_official_protocol_html
-from modules.db_manager import load_users, save_users, add_user, authenticate_user
+from modules.db_manager import load_users, save_users, add_user, authenticate_user, load_settings, save_settings
 from modules.sample_data import (
     SAMPLE_TASK,
     SAMPLE_REFERENCE,
@@ -382,12 +382,13 @@ if "uploaded_image" not in st.session_state:
 if "file_type_label" not in st.session_state:
     st.session_state.file_type_label = "Matnli kiritish"
 
+app_settings = load_settings()
 if "secure_api_key" not in st.session_state:
-    st.session_state.secure_api_key = ""
+    st.session_state.secure_api_key = app_settings.get("gemini_api_key", "")
 if "default_max_score" not in st.session_state:
-    st.session_state.default_max_score = 10.0
+    st.session_state.default_max_score = float(app_settings.get("default_max_score", 10.0))
 if "default_beta" not in st.session_state:
-    st.session_state.default_beta = 1.0
+    st.session_state.default_beta = float(app_settings.get("default_beta", 1.0))
 
 if "audit_logs" not in st.session_state:
     st.session_state.audit_logs = [
@@ -504,8 +505,8 @@ with st.sidebar:
                 "🏠 Bosh sahifa",
                 "➕ Foydalanuvchi qo'shish",
                 "👥 Akkauntlar",
-                "🔐 API kaliti",
-                "📋 Audit loglari"
+                "📋 Audit loglari",
+                "⚙️ Sozlamalar"
             ],
             label_visibility="collapsed"
         )
@@ -1062,12 +1063,66 @@ elif user_role == "Administrator":
         c_m2.metric("O'quvchilar", f"{students_count} nafar")
         c_m3.metric("Baholangan Ishlar", f"{len(st.session_state.grades_journal)} ta")
 
-    elif active_menu == "🔐 API kaliti":
-        st.subheader("🔐 Google Gemini API Kaliti")
-        api_val = st.text_input("API Kaliti:", value=st.session_state.secure_api_key, type="password")
-        if st.button("Saqlash", type="primary"):
-            st.session_state.secure_api_key = api_val.strip()
-            st.success("API saqlandi!")
+    elif active_menu == "⚙️ Sozlamalar":
+        st.subheader("⚙️ Tizim Sozlamalari va Maxfiylik")
+        st.write("Platformaning asosiy parametrlari va maxfiy konfiguratsiyalari. Ushbu bo'lim faqat bosh administrator uchun ochiq bo'lib, boshqa foydalanuvchilarga ko'rinmaydi.")
+        
+        # 1. API KALITI HIMOYA QILINGAN QISMI (EXPANDER ICHIDA, PAROL FORMATIDA)
+        with st.expander("🔐 Maxfiy Google Gemini API Kaliti (Himoyalangan)", expanded=False):
+            st.info("🛡️ **Maxfiylik himoyasi:** Ushbu API kaliti faqat sizga (Administratorga) tegishli. Boshqa foydalanuvchilar (o'qituvchilar va o'quvchilar) ushbu kalitni umuman ko'ra olmaydi.")
+            current_k = st.session_state.secure_api_key
+            status_text = "🟢 Kalit kiritilgan va faol" if current_k else "⚪ Hozircha kiritilmagan (Lokal NLP model faol)"
+            st.caption(f"**Holat:** {status_text}")
+            
+            api_val = st.text_input("Gemini API Kalitini kiriting yoki yangilang:", value=current_k, type="password", placeholder="AIzaSy...")
+            
+            c_save1, c_save2 = st.columns([1, 1])
+            with c_save1:
+                if st.button("💾 Kalitni Xavfsiz Saqlash", type="primary", use_container_width=True):
+                    st.session_state.secure_api_key = api_val.strip()
+                    app_s = load_settings()
+                    app_s["gemini_api_key"] = api_val.strip()
+                    save_settings(app_s)
+                    st.success("✅ API kaliti xavfsiz saqlandi!")
+                    st.rerun()
+            with c_save2:
+                if st.button("🗑️ Kalitni O'chirish", use_container_width=True):
+                    st.session_state.secure_api_key = ""
+                    app_s = load_settings()
+                    app_s["gemini_api_key"] = ""
+                    save_settings(app_s)
+                    st.warning("API kaliti tozalandi!")
+                    st.rerun()
+
+        # 2. STANDART BAHOLASH PARAMETRLARI
+        with st.expander("🎯 Standart Baholash Parametrlari", expanded=True):
+            col_cfg1, col_cfg2 = st.columns(2)
+            with col_cfg1:
+                new_max = st.number_input("Standart Maksimal Ball:", 1.0, 100.0, float(st.session_state.default_max_score), 1.0)
+            with col_cfg2:
+                new_beta = st.slider("Standart AI Jazosi (β):", 0.0, 1.0, float(st.session_state.default_beta), 0.1)
+            
+            if st.button("💾 Parametrlarni Saqlash"):
+                st.session_state.default_max_score = new_max
+                st.session_state.default_beta = new_beta
+                app_s = load_settings()
+                app_s["default_max_score"] = new_max
+                app_s["default_beta"] = new_beta
+                save_settings(app_s)
+                st.success("Standart baholash parametrlari saqlandi!")
+
+        # 3. XAVFSIZLIK VA PRIVACY MONITORINGI
+        st.markdown("""
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 18px; margin-top: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <h4 style="margin: 0 0 10px 0; color: #0f172a;">🛡️ Maxfiylik va Xavfsizlik Kafolatlari</h4>
+            <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 0.9rem; line-height: 1.7;">
+                <li><b>Asosiy menyu va sahifalarda API kalit ko'rinmaydi:</b> ✅ To'liq yashirilgan</li>
+                <li><b>O'qituvchi va o'quvchilar uchun API ruxsati:</b> ❌ Cheklangan (Faqat Admin)</li>
+                <li><b>Foydalanuvchi akkauntlari va parollari:</b> ✅ Doimiy disk bazasi (data/users.json)</li>
+                <li><b>Audit xavfsizlik jurnali:</b> ✅ Doimiy ro'yxatga olinmoqda</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
 
     elif active_menu == "📋 Audit loglari":
         st.subheader("📋 Tizim Audit Loglari")
